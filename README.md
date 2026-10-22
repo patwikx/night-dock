@@ -1,6 +1,6 @@
 # Night Dock
 
-patwikx's personal launcher for an LG 55UT8050PSB, customized from [partridgeworks/webos-launcher](https://github.com/partridgeworks/webos-launcher).
+A custom launcher for LG webOS TVs, based on [partridgeworks/webos-launcher](https://github.com/partridgeworks/webos-launcher).
 
 Night Dock uses a night-lake background, translucent glass panels, a compact app dock, and remote-first navigation. The current build is version 1.1.2 and has been tested on this TV running webOS 10.3.2.
 
@@ -11,6 +11,12 @@ Night Dock uses a night-lake background, translucent glass panels, a compact app
 - Startup verifies Home's selected apps first. Cached UI nodes, selective focus updates, a minute-aligned clock, and removal of unused styles/assets reduce repeated work.
 
 The app keeps the ID `works.partridge.webos-launcher` for compatibility with the existing TV installation, saved preferences, and configured Home integration. This repository does not install or change system-level Home mappings, boot services, or memory policies.
+
+## Verified rooted TV setup
+
+The working setup uses an LG 55UT8050PSB running firmware 33.31.75 and webOS 10.3.2. Root SSH, Homebrew Channel, Home-button mapping, delayed power-on launch, and direct YouTube exit to Night Dock were verified on this TV. These are existing device-level changes, separate from installing the launcher.
+
+See [the verified setup notes](docs/TV-SETUP.md) for the rooting route, retained configuration, working project location, original T3 thread reference, and tested limits. Credentials and device backups are excluded from the repository.
 
 ## Develop and build
 
@@ -35,7 +41,7 @@ For the existing rooted-TV SSH workflow, copy `tv.env.example` to the ignored `t
 npm run deploy
 ```
 
-For an already paired Developer Mode device:
+For a separate, unrooted TV with an already paired Developer Mode connection:
 
 ```sh
 npm run build
@@ -44,6 +50,8 @@ sh scripts/install-dev.sh
 ```
 
 Set `TV_DEVICE` to use a pairing name other than `lg-tv`. The optional Homebrew app-list provider stays off by default and requires a rooted TV with Homebrew Channel.
+
+Developer Mode was removed as part of the verified rooted setup. Use its SSH workflow rather than reinstalling Developer Mode on that TV.
 
 ## Controls
 
@@ -67,6 +75,6 @@ Profiling reloads the launcher and performs short navigation checks. `check-tv-l
 
 ## Attribution
 
-This is a customized project derived from an MIT-licensed launcher, not a claim that every component was written from scratch. The original Git history and MIT notice are retained, with patwikx credited for modifications. See [UPSTREAM.md](UPSTREAM.md), [LICENSE](LICENSE), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This project derives from an MIT-licensed launcher. The original Git history and MIT notice are retained. See [UPSTREAM.md](UPSTREAM.md), [LICENSE](LICENSE), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 App logos, LG input icons, the Inter font, and the supplied wallpaper retain their respective ownership and license terms. The project is not affiliated with LG, YouTube, or the other app publishers.
