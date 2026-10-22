@@ -72,7 +72,7 @@ try{
  const notice=document.getElementById('launchNotice');
  tile.click();
  assert(!notice.hidden&&notice.textContent.includes('available on your TV'),'Browser launch gives a nonblocking TV-only notice');
- assert(document.activeElement===tile&&document.getElementById('stage').classList.contains('home-motion'),'Browser launch keeps Home focus and motion');
+ assert(document.activeElement===tile,'Browser launch keeps Home focus');
  assert(!document.getElementById('launchOverlay')&&launched===null,'Browser preview has no launch dialog or service call');
  key('ArrowRight');await paint();assert(document.querySelector('.app-chip.is-focused')!==tile,'Home navigation remains usable after launch');
  key('Backspace');assert(notice.hidden,'Back dismisses the launch notice');

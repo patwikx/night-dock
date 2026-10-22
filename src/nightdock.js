@@ -17,7 +17,6 @@ export function startNightDock(runtime) {
   var visibleCache=null, choicesVersion=0, dockDirty=true, appEls=[], sourceEls=[], homeBounds=null, homeScrollDestination=null, settingsBounds=null;
   var homeFocus=null, sourceFocus=null, settingsFocus=null, settingsHeld=null, settingsTabs=[], settingsTiles=[];
   var lastMode=null, settingsBuildKey=null, sourcesSignature=null, inputsVersion=0, settingsRequest=0;
-  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
   var navigationFrame=0;
   function cancelNavigationFrame(){if(navigationFrame){cancelAnimationFrame(navigationFrame);navigationFrame=0;}}
   function paintNavigation(){
@@ -76,12 +75,12 @@ export function startNightDock(runtime) {
       if(top<current+16)destination=Math.max(0,top-16);
       else if(top+row.height>current+height-16)destination=top+row.height-height+16;
     }
-    if(lastMode!==mode){$('stage').classList.toggle('home-motion',mode==='home');lastMode=mode;pointerTarget=null;}
+    if(lastMode!==mode){lastMode=mode;pointerTarget=null;}
     homeFocus=focusElement(homeFocus,target);
     if(focus&&target&&document.activeElement!==target)target.focus({preventScroll:true});
     if(destination!==null&&destination!==homeScrollDestination){
       homeScrollDestination=destination;
-      rows.scrollTo({top:destination,behavior:reducedMotion.matches?'auto':'smooth'});
+      rows.scrollTo({top:destination,behavior:'auto'});
     }
   }
   function moveHome(key){
