@@ -3,17 +3,17 @@
 // components read the same values.
 
 export const COLOR = {
-	bg: '#000000',
-	bgGradientInner: '#1e1e1e',
-	bgGradientMid: '#0c0c0c',
-	bgGradientOuter: '#000000',
-	textPrimary: '#EEEEEE',
-	textSecondary: '#AAAAAA',
-	textMuted: '#666666',
-	tileBg: '#161616',
-	tileBgFocus: '#202020',
-	tileBorder: '#2a2a2a',
-	tileBorderFocus: '#EEEEEE',
+	bg: '#0c1429',
+	bgGradientInner: '#364e7a',
+	bgGradientMid: '#1c2d50',
+	bgGradientOuter: '#0c1429',
+	textPrimary: '#f9faff',
+	textSecondary: '#cbd5e8',
+	textMuted: '#a8b9d5',
+	tileBg: '#273852',
+	tileBgFocus: '#3c5072',
+	tileBorder: '#4b5d79',
+	tileBorderFocus: '#ffffff',
 	badge: '#EEEEEE',
 	badgeText: '#000000',
 	liftShadow: 'rgba(0, 0, 0, 0.7)',
@@ -32,8 +32,8 @@ export const FONT = {
 	greeting: 72,
 	clock: 32,
 	clockTime: 44,
-	rowLabel: 20,
-	tileLabel: 19,
+	rowLabel: 28,
+	tileLabel: 24,
 	settingsTitle: 40,
 	settingsTab: 26,
 	settingsButton: 22,
@@ -46,23 +46,28 @@ export const FONT = {
 export const LAYOUT = {
 	screenWidth: 1920,
 	screenHeight: 1080,
-	edgePadding: 140,       // heavy padding around the screen edges
+	edgePadding: 110,
 	headerTop: 84,
 	rowsTop: 236,           // rows start here, below the greeting and clock
 	tileSize: 144,          // app / source tiles are square
 	tileGap: 28,
-	tileRadius: 24,
+	tileRadius: 22,
 	rowLabelGap: 14,        // gap between a row's subheader and its tiles
 	rowGap: 28,             // vertical space between rows
-	gridColumns: 9          // settings picker grid
+	gridColumns: 8,
+	homeColumns: 6,
+	homeTileWidth: 244,
+	homeTileHeight: 150,
+	homeColumnGap: 46,
+	homeRowGap: 34
 } as const;
 
 export const MOTION = {
-	focusMs: 160,
+	focusMs: 120,
 	scrollMs: 260,
-	focusScale: 1.12,
-	liftScale: 1.2,         // a tile picked up in re-order mode
-	unfocusedRowOpacity: 0.55
+	focusScale: 1.04,
+	liftScale: 1.1,         // a tile picked up in re-order mode
+	unfocusedRowOpacity: 0.8
 } as const;
 
 /** Writes every token onto :root as --color-*, --font-*, --layout-*, --motion-*. */

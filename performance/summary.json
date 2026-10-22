@@ -1,0 +1,68 @@
+{
+  "scriptBytes": {
+    "before": 56225,
+    "after": 44971
+  },
+  "bundledAssetBytes": {
+    "before": 1037519,
+    "after": 839074
+  },
+  "warmStartupMs": {
+    "before": [
+      552.8000000007451,
+      521.7999999988824,
+      407.80000000074506
+    ],
+    "after": [
+      586.9000000003725,
+      386.3999999985099,
+      363.90000000037253
+    ]
+  },
+  "unchangedPointer": {
+    "events": 500,
+    "beforeMutations": 4000,
+    "afterMutations": 0,
+    "beforeScriptMs": 72.75800000000001,
+    "afterScriptMs": 9.624999999999995
+  },
+  "visuals": {
+    "home": {
+      "identical": true,
+      "changedPixels": 0,
+      "totalPixels": 2073600,
+      "meanChannelDifference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maxChannelDifference": 0
+    },
+    "sources": {
+      "identical": true,
+      "changedPixels": 0,
+      "totalPixels": 2073600,
+      "meanChannelDifference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maxChannelDifference": 0
+    },
+    "settings": {
+      "identical": false,
+      "changedPixels": 10552,
+      "totalPixels": 2073600,
+      "meanChannelDifference": [
+        0.008525270061728395,
+        0.009075038580246914,
+        0.00923707561728395
+      ],
+      "maxChannelDifference": 13
+    }
+  },
+  "computedHomeStylesIdentical": true,
+  "computedSettingsStylesIdentical": true,
+  "configIdenticalAcrossBenchmark": true,
+  "finalScriptSHA256": "886a6e4e82e738ed2a4af7b51b64b4c83c3e6a2942fc59177045eba16caf2068"
+}

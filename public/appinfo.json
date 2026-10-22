@@ -1,11 +1,11 @@
 {
   "id": "works.partridge.webos-launcher",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "vendor": "works.partridge.webos-launcher",
   "type": "web",
   "main": "index.html",
   "title": "Launcher",
-  "appDescription": "Minimalist home screen: apps, inputs and a way back to LG's home.",
+  "appDescription": "Night Dock home with your apps and TV input shortcuts.",
   "icon": "icon.png",
   "largeIcon": "largeIcon.png",
   "iconColor": "#050505",

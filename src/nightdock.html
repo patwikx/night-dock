@@ -1,0 +1,68 @@
+    <div class="stage-shell" id="stageShell">
+      <div class="stage-scaler" id="stageScaler">
+        <div class="stage" id="stage">
+          <img class="wallpaper" src="nightdock/wallpaper-night-lake.jpg" alt="" draggable="false">
+          <div class="scrim scrim--top" aria-hidden="true"></div>
+          <div class="scrim scrim--bottom" aria-hidden="true"></div>
+
+          <header class="tv-header">
+            <div class="clock" aria-label="Current time">
+              <div class="clock__time" id="clockTime">21:41</div>
+              <div class="clock__date" id="clockDate">Thursday 22 October</div>
+            </div>
+            <nav class="utilities" aria-label="Launcher controls" id="utilitiesNav">
+              <button type="button" class="utility" data-utility="0" tabindex="-1" aria-label="LG Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.7l8.5 6.8"/><path d="M5.8 9.4v9.1c0 .4.3.7.7.7h11c.4 0 .7-.3.7-.7V9.4"/><path d="M9.7 19.2v-5.5h4.6v5.5"/></svg>
+                <span>LG Home</span>
+              </button>
+              <button type="button" class="utility" data-utility="1" tabindex="-1" aria-label="Settings">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.1"/><path d="M12 2.9v2.2M12 18.9v2.2M21.1 12h-2.2M5.1 12H2.9M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1 5.6 5.6"/></svg>
+                <span>Settings</span>
+              </button>
+              <button type="button" class="utility" data-utility="2" id="sourcesButton" tabindex="-1" aria-label="Sources" aria-haspopup="menu" aria-expanded="false" aria-controls="sourcesMenu">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4M9 9l3 3 3-3"/></svg><span>Sources</span>
+              </button>
+            </nav>
+          </header>
+
+          <div id="bootStatus" role="status">Loading your apps…</div>
+          <div class="dock" id="dock">
+            <div class="dock__rows" id="dockRows" aria-label="Apps">
+              <div class="app-row" id="appRow1"></div>
+              <div class="app-row" id="appRow2"></div>
+            </div>
+          </div>
+
+          <div class="input-menu" id="sourcesMenu" role="menu" aria-label="Sources" hidden>
+            <h2>Sources</h2><div id="sourceList"></div>
+            <p id="sourceEmpty" hidden>No inputs are available. Close and reopen to try again.</p>
+          </div>
+
+          <div class="tv-hint" aria-hidden="true">
+            <span><kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd> move</span>
+            <span class="tv-hint__dot"></span>
+            <span><kbd>OK</kbd> open</span>
+            <span class="tv-hint__dot"></span>
+            <span><kbd>Back</kbd> return</span>
+          </div>
+
+          <div class="overlay" id="launchOverlay" hidden>
+            <div class="launch" role="dialog" aria-modal="true" aria-labelledby="launchName" aria-describedby="launchStatus launchNote">
+              <div class="launch__plate" id="launchPlate"></div>
+              <div class="launch__name" id="launchName">YouTube</div>
+              <div class="launch__status" id="launchStatus">Opening…</div>
+              <div class="launch__note" id="launchNote"></div>
+              <button type="button" class="launch__back" id="launchBack">Back to dock</button>
+              <div class="launch__keyhint">OK or Back returns</div>
+            </div>
+          </div>
+
+          <section class="nd-settings" id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
+            <header class="nd-settings__header"><div><h1 id="settingsTitle">Settings</h1><p id="settingsHint"></p></div><button type="button" class="nd-control" id="settingsClose">Back to Home</button></header>
+            <nav class="nd-tabs" aria-label="Launcher settings"><div role="tablist" id="settingsTabs"></div><button type="button" class="nd-control" id="reorderButton">Re-order apps</button></nav>
+            <div class="nd-settings__viewport" id="settingsViewport"><div class="nd-grid" id="settingsGrid" role="tabpanel"></div></div>
+            <footer class="nd-settings__footer"><span id="settingsCount"></span><span id="settingsNotice" role="status" aria-live="polite"></span><span>Back returns</span></footer>
+          </section>
+        </div>
+      </div>
+    </div>

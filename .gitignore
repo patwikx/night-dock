@@ -7,3 +7,24 @@ build/
 # local, per-person settings
 tv.env
 src/config/catalog.local.ts
+
+# Local screenshots and reference material
+.impeccable/review/
+.impeccable/references/
+
+# Local environment, device credentials and session captures
+.local/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Keep reproducible performance results, not local snapshots or device state
+performance/baseline/*
+!performance/baseline/profile.json
+performance/optimized/*
+!performance/optimized/profile.json
+!performance/optimized/browser-tests.json
+!performance/optimized/lifecycle.json
+performance/**/*-diff.png

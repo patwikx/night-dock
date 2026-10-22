@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'preact/hooks';
+import {useCallback, useEffect, useRef, useState} from 'preact/hooks';
 import {Grid} from '../components/Grid';
 import {OptionList, type OptionItem} from '../components/OptionList';
 import type {TileModel} from '../components/Tile';
@@ -53,12 +53,18 @@ const HINT = {
  *  Grid tabs, re-order mode (hold OK, or the button): only what's on the home screen, in order;
  *  OK picks an item up, arrows move it, OK puts it down. Hold OK or press Done to leave. */
 export function Settings ({tabs, options, active, onToggle, onReorder, onOption, onClose}: Props) {
+	const container = useRef<HTMLDivElement>(null);
 	const [tabIndex, setTabIndex] = useState(0);
 	const [zone, setZone] = useState<Zone>('tabs');
 	const [gridIndex, setGridIndex] = useState(0);
 	const [optionIndex, setOptionIndex] = useState(0);
 	const [reordering, setReordering] = useState(false);
 	const [held, setHeld] = useState<Held | null>(null);
+	useEffect(() => {
+		if (!active || !container.current) return;
+		const target = container.current.querySelector<HTMLElement>('.tab--focused, .settings__button--focused, .tile--focused, .option--focused');
+		if (target) target.focus({preventScroll: true});
+	}, [active, zone, tabIndex, gridIndex, optionIndex, reordering]);
 
 	const tabCount = tabs.length + 1;                  // grid tabs + Options
 	const onOptions = tabIndex === tabs.length;
@@ -176,28 +182,31 @@ export function Settings ({tabs, options, active, onToggle, onReorder, onOption,
 	const buttonClass = ['settings__button', reordering && 'settings__button--active', zone === 'button' && 'settings__button--focused'].filter(Boolean).join(' ');
 
 	return (
-		<div class="screen">
+		<div class="screen" ref={container}>
 			<div class="settings">
 				<h1 class="settings__title">Settings</h1>
 				<p class="settings__hint">{hint}</p>
-				<div class="settings__tabs">
+				<div class="settings__tabs" role="tablist" aria-label="Launcher settings">
 					{labels.map((label, i) => (
-						<div
+						<button type="button" role="tab" aria-selected={i === tabIndex} tabIndex={zone === 'tabs' && i === tabIndex ? 0 : -1}
 							key={label}
 							class={['tab', i === tabIndex && 'tab--active', reordering && i !== tabIndex && 'tab--locked', zone === 'tabs' && i === tabIndex && 'tab--focused'].filter(Boolean).join(' ')}
-							onMouseEnter={() => { if (!reordering) { setZone('tabs'); selectTab(i); } }}
+							onFocus={() => { if (!reordering) setZone('tabs'); }}
+							onMouseMove={() => { if (!reordering) { setZone('tabs'); selectTab(i); } }}
+							onClick={() => selectTab(i)}
 						>
 							{label}
-						</div>
+						</button>
 					))}
 					{tab && (
-						<div
+						<button type="button" tabIndex={zone === 'button' ? 0 : -1}
 							class={buttonClass}
-							onMouseEnter={() => setZone('button')}
+							onFocus={() => setZone('button')}
+							onMouseMove={() => setZone('button')}
 							onClick={() => setMode(!reordering)}
 						>
 							{reordering ? 'Done' : `Re-order ${tab.noun}`}
-						</div>
+						</button>
 					)}
 				</div>
 				{tab && (

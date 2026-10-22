@@ -1,0 +1,649 @@
+{
+  "boots": [
+    {
+      "readyMs": 586.9000000003725,
+      "nodes": 123,
+      "images": 10,
+      "heap": 10000000,
+      "nav": {
+        "name": "file:///media/developer/apps/usr/palm/applications/works.partridge.webos-launcher/index.html",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 295.19999999925494,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "",
+        "renderBlockingStatus": "non-blocking",
+        "workerStart": 0,
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 6.699999999254942,
+        "domainLookupStart": 6.699999999254942,
+        "domainLookupEnd": 6.699999999254942,
+        "connectStart": 6.699999999254942,
+        "secureConnectionStart": 0,
+        "connectEnd": 6.699999999254942,
+        "requestStart": 6.699999999254942,
+        "responseStart": 6.699999999254942,
+        "firstInterimResponseStart": 0,
+        "responseEnd": 46.40000000037253,
+        "transferSize": 581,
+        "encodedBodySize": 281,
+        "decodedBodySize": 281,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 70,
+        "unloadEventEnd": 70,
+        "domInteractive": 171.59999999962747,
+        "domContentLoadedEventStart": 238.80000000074506,
+        "domContentLoadedEventEnd": 238.90000000037253,
+        "domComplete": 292.09999999962747,
+        "loadEventStart": 295.19999999925494,
+        "loadEventEnd": 295.19999999925494,
+        "type": "reload",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0
+      }
+    },
+    {
+      "readyMs": 386.3999999985099,
+      "nodes": 123,
+      "images": 10,
+      "heap": 10000000,
+      "nav": {
+        "name": "file:///media/developer/apps/usr/palm/applications/works.partridge.webos-launcher/index.html",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 324.69999999925494,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "",
+        "renderBlockingStatus": "non-blocking",
+        "workerStart": 0,
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.6999999992549419,
+        "domainLookupStart": 0.6999999992549419,
+        "domainLookupEnd": 0.6999999992549419,
+        "connectStart": 0.6999999992549419,
+        "secureConnectionStart": 0,
+        "connectEnd": 0.6999999992549419,
+        "requestStart": 0.6999999992549419,
+        "responseStart": 0.6999999992549419,
+        "firstInterimResponseStart": 0,
+        "responseEnd": 20.899999998509884,
+        "transferSize": 581,
+        "encodedBodySize": 281,
+        "decodedBodySize": 281,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 38.19999999925494,
+        "unloadEventEnd": 38.19999999925494,
+        "domInteractive": 100.29999999888241,
+        "domContentLoadedEventStart": 128.2999999988824,
+        "domContentLoadedEventEnd": 128.2999999988824,
+        "domComplete": 324.09999999962747,
+        "loadEventStart": 324.69999999925494,
+        "loadEventEnd": 324.69999999925494,
+        "type": "reload",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0
+      }
+    },
+    {
+      "readyMs": 363.90000000037253,
+      "nodes": 123,
+      "images": 10,
+      "heap": 10000000,
+      "nav": {
+        "name": "file:///media/developer/apps/usr/palm/applications/works.partridge.webos-launcher/index.html",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 142,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "",
+        "renderBlockingStatus": "non-blocking",
+        "workerStart": 0,
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 1.400000000372529,
+        "domainLookupStart": 1.400000000372529,
+        "domainLookupEnd": 1.400000000372529,
+        "connectStart": 1.400000000372529,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.400000000372529,
+        "requestStart": 1.400000000372529,
+        "responseStart": 1.400000000372529,
+        "firstInterimResponseStart": 0,
+        "responseEnd": 15.199999999254942,
+        "transferSize": 581,
+        "encodedBodySize": 281,
+        "decodedBodySize": 281,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 33.69999999925494,
+        "unloadEventEnd": 33.69999999925494,
+        "domInteractive": 82.90000000037253,
+        "domContentLoadedEventStart": 109.90000000037253,
+        "domContentLoadedEventEnd": 112.59999999962747,
+        "domComplete": 141.40000000037253,
+        "loadEventStart": 141.90000000037253,
+        "loadEventEnd": 142,
+        "type": "reload",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0
+      }
+    }
+  ],
+  "pointer": {
+    "dispatchMs": 53.90000000037253,
+    "metrics": {
+      "LayoutCount": 0,
+      "RecalcStyleCount": 0,
+      "LayoutDuration": 0,
+      "RecalcStyleDuration": 0,
+      "DevToolsCommandDuration": 0.045744,
+      "ScriptDuration": 0.009624999999999995,
+      "V8CompileDuration": 0,
+      "TaskDuration": 0.06157599999999985,
+      "TaskOtherDuration": 0.0062069999999998515
+    },
+    "mutations": 0
+  },
+  "navigation": {
+    "handlerTimes": [
+      7,
+      11.800000000745058,
+      14,
+      10.400000000372529,
+      11.5,
+      9,
+      11.100000001490116,
+      8.200000001117587,
+      7.5,
+      6.900000000372529,
+      6.799999998882413,
+      7.200000001117587
+    ],
+    "frames": [
+      -10.19999999962738,
+      16.799999999999955,
+      33.299999999999955,
+      16.700000000000045,
+      49.899999999999864,
+      16.700000000000045,
+      16.600000000000136,
+      16.799999999999955,
+      33.299999999999955,
+      33.299999999999955,
+      33.299999999999955,
+      16.700000000000045,
+      16.600000000000136,
+      33.399999999999864,
+      33.40000000000009,
+      16.59999999999991,
+      16.700000000000045,
+      16.59999999999991,
+      50,
+      33.30000000000018,
+      50.09999999999991,
+      16.59999999999991,
+      16.700000000000045,
+      16.700000000000045,
+      16.59999999999991,
+      16.700000000000045,
+      16.600000000000136,
+      16.699999999999818,
+      16.700000000000045,
+      16.700000000000045,
+      16.59999999999991,
+      16.700000000000273,
+      16.699999999999818,
+      16.59999999999991,
+      16.59999999999991,
+      33.40000000000009,
+      16.59999999999991,
+      16.700000000000273,
+      16.699999999999818,
+      16.700000000000273,
+      16.699999999999818,
+      16.59999999999991,
+      16.700000000000273,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.59999999999991,
+      16.699999999999818
+    ],
+    "metrics": {
+      "LayoutCount": 15,
+      "RecalcStyleCount": 105,
+      "LayoutDuration": 0.01770400000000001,
+      "RecalcStyleDuration": 0.169136,
+      "DevToolsCommandDuration": 0.0021029999999999938,
+      "ScriptDuration": 0.040101,
+      "V8CompileDuration": 0,
+      "TaskDuration": 0.5787809999999998,
+      "TaskOtherDuration": 0.34973699999999996
+    }
+  },
+  "ui": {
+    "apps": [
+      "youtube.leanback.v4",
+      "netflix",
+      "com.apple.appletv",
+      "com.wbd.stream",
+      "org.webosbrew.hbchannel"
+    ],
+    "styles": [
+      {
+        "label": "LG Home",
+        "rect": {
+          "x": 1404.03125,
+          "y": 68,
+          "width": 138.109375,
+          "height": 50,
+          "top": 68,
+          "right": 1542.140625,
+          "bottom": 118,
+          "left": 1404.03125
+        },
+        "background": "rgba(4, 7, 14, 0.32)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(247, 249, 252, 0.9) none 0px",
+        "transform": "none"
+      },
+      {
+        "label": "Settings",
+        "rect": {
+          "x": 1552.140625,
+          "y": 68,
+          "width": 130.59375,
+          "height": 50,
+          "top": 68,
+          "right": 1682.734375,
+          "bottom": 118,
+          "left": 1552.140625
+        },
+        "background": "rgba(4, 7, 14, 0.32)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(247, 249, 252, 0.9) none 0px",
+        "transform": "none"
+      },
+      {
+        "label": "Sources",
+        "rect": {
+          "x": 1692.734375,
+          "y": 68,
+          "width": 131.265625,
+          "height": 50,
+          "top": 68,
+          "right": 1824,
+          "bottom": 118,
+          "left": 1692.734375
+        },
+        "background": "rgba(4, 7, 14, 0.32)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(247, 249, 252, 0.9) none 0px",
+        "transform": "none"
+      },
+      {
+        "label": "YouTube",
+        "rect": {
+          "x": 64,
+          "y": 860,
+          "width": 293.9375,
+          "height": 120,
+          "top": 860,
+          "right": 357.9375,
+          "bottom": 980,
+          "left": 64
+        },
+        "background": "rgb(243, 239, 228)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgb(8, 10, 15) none 0px",
+        "transform": "none"
+      },
+      {
+        "label": "Netflix",
+        "rect": {
+          "x": 369.9375,
+          "y": 860,
+          "width": 268.34375,
+          "height": 120,
+          "top": 860,
+          "right": 638.28125,
+          "bottom": 980,
+          "left": 369.9375
+        },
+        "background": "rgba(4, 7, 14, 0.42)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(248, 249, 252, 0.95) none 0px",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "label": "Apple TV",
+        "rect": {
+          "x": 650.28125,
+          "y": 860,
+          "width": 300.546875,
+          "height": 120,
+          "top": 860,
+          "right": 950.828125,
+          "bottom": 980,
+          "left": 650.28125
+        },
+        "background": "rgba(4, 7, 14, 0.42)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(248, 249, 252, 0.95) none 0px",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "label": "Max",
+        "rect": {
+          "x": 962.828125,
+          "y": 860,
+          "width": 245.71875,
+          "height": 120,
+          "top": 860,
+          "right": 1208.546875,
+          "bottom": 980,
+          "left": 962.828125
+        },
+        "background": "rgba(4, 7, 14, 0.42)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(248, 249, 252, 0.95) none 0px",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "label": "Homebrew",
+        "rect": {
+          "x": 1220.546875,
+          "y": 860,
+          "width": 318.703125,
+          "height": 120,
+          "top": 860,
+          "right": 1539.25,
+          "bottom": 980,
+          "left": 1220.546875
+        },
+        "background": "rgba(4, 7, 14, 0.42)",
+        "transition": "background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1) 0s, color 0.12s ease-out 0s",
+        "outline": "rgba(248, 249, 252, 0.95) none 0px",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    ],
+    "cssBytes": [
+      20622
+    ]
+  },
+  "settingsStyles": {
+    "glass": "blur(22px) saturate(1.15)",
+    "fill": "rgba(4, 7, 14, 0.38)",
+    "tiles": [
+      {
+        "id": "youtube.leanback.v4",
+        "rect": {
+          "x": 96,
+          "y": 288.5,
+          "width": 268,
+          "height": 214,
+          "top": 288.5,
+          "right": 364,
+          "bottom": 502.5,
+          "left": 96
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "netflix",
+        "rect": {
+          "x": 388,
+          "y": 288.5,
+          "width": 268,
+          "height": 214,
+          "top": 288.5,
+          "right": 656,
+          "bottom": 502.5,
+          "left": 388
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.apple.appletv",
+        "rect": {
+          "x": 680,
+          "y": 288.5,
+          "width": 268,
+          "height": 214,
+          "top": 288.5,
+          "right": 948,
+          "bottom": 502.5,
+          "left": 680
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.wbd.stream",
+        "rect": {
+          "x": 972,
+          "y": 288.5,
+          "width": 268,
+          "height": 214,
+          "top": 288.5,
+          "right": 1240,
+          "bottom": 502.5,
+          "left": 972
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "org.webosbrew.hbchannel",
+        "rect": {
+          "x": 1264,
+          "y": 288.5,
+          "width": 268,
+          "height": 214,
+          "top": 288.5,
+          "right": 1532,
+          "bottom": 502.5,
+          "left": 1264
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "io.strem.tv",
+        "rect": {
+          "x": 1556,
+          "y": 288.5,
+          "width": 268,
+          "height": 214,
+          "top": 288.5,
+          "right": 1824,
+          "bottom": 502.5,
+          "left": 1556
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "amazon",
+        "rect": {
+          "x": 96,
+          "y": 526.5,
+          "width": 268,
+          "height": 214,
+          "top": 526.5,
+          "right": 364,
+          "bottom": 740.5,
+          "left": 96
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.disney.disneyplus-prod",
+        "rect": {
+          "x": 388,
+          "y": 526.5,
+          "width": 268,
+          "height": 214,
+          "top": 526.5,
+          "right": 656,
+          "bottom": 740.5,
+          "left": 388
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.webos.app.browser",
+        "rect": {
+          "x": 680,
+          "y": 526.5,
+          "width": 268,
+          "height": 214,
+          "top": 526.5,
+          "right": 948,
+          "bottom": 740.5,
+          "left": 680
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.webos.app.mediadiscovery",
+        "rect": {
+          "x": 972,
+          "y": 526.5,
+          "width": 268,
+          "height": 214,
+          "top": 526.5,
+          "right": 1240,
+          "bottom": 740.5,
+          "left": 972
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.webos.app.homeconnect",
+        "rect": {
+          "x": 1264,
+          "y": 526.5,
+          "width": 268,
+          "height": 214,
+          "top": 526.5,
+          "right": 1532,
+          "bottom": 740.5,
+          "left": 1264
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "amazon.alexa.view",
+        "rect": {
+          "x": 1556,
+          "y": 526.5,
+          "width": 268,
+          "height": 214,
+          "top": 526.5,
+          "right": 1824,
+          "bottom": 740.5,
+          "left": 1556
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "com.palm.app.settings",
+        "rect": {
+          "x": 96,
+          "y": 764.5,
+          "width": 268,
+          "height": 214,
+          "top": 764.5,
+          "right": 364,
+          "bottom": 978.5,
+          "left": 96
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      },
+      {
+        "id": "org.webosbrew.inputhook",
+        "rect": {
+          "x": 388,
+          "y": 764.5,
+          "width": 268,
+          "height": 214,
+          "top": 764.5,
+          "right": 656,
+          "bottom": 978.5,
+          "left": 388
+        },
+        "color": "rgb(244, 239, 227)",
+        "background": "rgba(4, 7, 14, 0.28)"
+      }
+    ]
+  },
+  "idle": {
+    "LayoutCount": 0,
+    "RecalcStyleCount": 4,
+    "LayoutDuration": 0,
+    "RecalcStyleDuration": 0.002948000000000006,
+    "DevToolsCommandDuration": 0.0006290000000000046,
+    "ScriptDuration": 0,
+    "V8CompileDuration": 0,
+    "TaskDuration": 0.07830999999999966,
+    "TaskOtherDuration": 0.07473300000000016
+  },
+  "final": {
+    "Timestamp": 14846.743348,
+    "AudioHandlers": 0,
+    "AudioWorkletProcessors": 0,
+    "Documents": 6,
+    "Frames": 6,
+    "JSEventListeners": 74,
+    "LayoutObjects": 230,
+    "MediaKeySessions": 0,
+    "MediaKeys": 0,
+    "Nodes": 369,
+    "Resources": 22,
+    "ContextLifecycleStateObservers": 8,
+    "V8PerContextDatas": 1,
+    "WorkerGlobalScopes": 0,
+    "UACSSResources": 0,
+    "RTCPeerConnections": 0,
+    "ResourceFetchers": 6,
+    "AdSubframes": 0,
+    "DetachedScriptStates": 3,
+    "ArrayBufferContents": 0,
+    "LayoutCount": 37,
+    "RecalcStyleCount": 143,
+    "LayoutDuration": 0.150965,
+    "RecalcStyleDuration": 0.265414,
+    "DevToolsCommandDuration": 0.116978,
+    "ScriptDuration": 0.244346,
+    "V8CompileDuration": 0.01359,
+    "TaskDuration": 2.873007,
+    "TaskOtherDuration": 2.081714,
+    "ThreadTime": 1.724357,
+    "ProcessTime": 81.87,
+    "JSHeapUsedSize": 792652,
+    "JSHeapTotalSize": 2641920,
+    "FirstMeaningfulPaint": 14827.874263,
+    "DomContentLoaded": 14827.656761,
+    "NavigationStart": 14827.546841
+  }
+}

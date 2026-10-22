@@ -50,9 +50,33 @@ function catalogEntries (apps: CatalogApp[]): AppEntry[] {
 	}));
 }
 
-function listViaCatalog (): Promise<AppEntry[]> {
-	return Promise.all(APP_CATALOG.map((a) => appExists(a.id)))
-		.then((present) => catalogEntries(APP_CATALOG.filter((_, i) => present[i])));
+function listViaCatalog (catalog: CatalogApp[] = APP_CATALOG): Promise<AppEntry[]> {
+	return Promise.all(catalog.map((a) => appExists(a.id)))
+		.then((present) => catalogEntries(catalog.filter((_, i) => present[i])));
+}
+
+/** Verify Home's selected apps first. Discover the remaining Settings entries after
+ * the first frame, without checking any app twice or trusting a stale disk cache. */
+export function createAppDiscovery (useHomebrew: boolean, selectedIds: readonly string[]): {
+	home: Promise<AppList>;
+	complete: () => Promise<AppList>;
+} {
+	if (useHomebrew || !isWebOS()) {
+		const home = listApps(useHomebrew);
+		return {home, complete: () => home};
+	}
+	const selected = new Set(selectedIds);
+	const first = APP_CATALOG.filter((app) => selected.has(app.id));
+	const remaining = APP_CATALOG.filter((app) => !selected.has(app.id));
+	const home = listViaCatalog(first).then((apps): AppList => ({apps, source: 'catalog'}));
+	let complete: Promise<AppList> | undefined;
+	return {
+		home,
+		complete: () => complete || (complete = Promise.all([home, listViaCatalog(remaining)]).then(([initial, rest]) => {
+			const byId = new Map(initial.apps.concat(rest).map((app) => [app.id, app]));
+			return {apps: APP_CATALOG.map((app) => byId.get(app.id)).filter((app): app is AppEntry => !!app), source: 'catalog'};
+		}))
+	};
 }
 
 // ---------- provider 2: Homebrew Channel (opt-in) ----------

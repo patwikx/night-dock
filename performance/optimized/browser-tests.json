@@ -1,0 +1,20 @@
+{
+  "passed": [
+    "All selected apps render",
+    "Clock schedules its next minute boundary",
+    "Back cancels Settings requested during discovery",
+    "Unchanged Settings grids are reused across opens",
+    "Opening Settings does not rebuild Home",
+    "App visibility saves",
+    "Hidden Home stays unchanged while Settings is edited",
+    "Changed Home rebuilds when Settings closes",
+    "Picking up an app reuses its grid",
+    "Reordering saves the new order",
+    "Back restores cancelled order",
+    "Smooth scrolling keeps a fourth-row selection visible",
+    "Unchanged source menus reuse their nodes",
+    "Sources ignore old visibility preferences",
+    "500 unchanged pointer moves cause zero DOM mutations",
+    "Source launch uses its real TV app ID"
+  ]
+}

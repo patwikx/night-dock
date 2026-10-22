@@ -18,20 +18,20 @@ export function OptionList ({options, focused, selected, onSelect, onActivate}: 
 	return (
 		<div class="options">
 			{options.map((o, i) => (
-				<div
+				<button type="button" role="switch" aria-checked={o.value} tabIndex={focused && i === selected ? 0 : -1}
 					key={o.id}
 					class={`option${focused && i === selected ? ' option--focused' : ''}`}
-					onMouseEnter={() => onSelect(i)}
+					onFocus={() => onSelect(i)} onMouseMove={() => onSelect(i)}
 					onClick={() => onActivate(i)}
 				>
 					<div class="option__text">
 						<div class="option__label">{o.label}</div>
 						<div class="option__description">{o.description}</div>
 					</div>
-					<div class={`switch${o.value ? ' switch--on' : ''}`} role="switch" aria-checked={o.value}>
+					<div class={`switch${o.value ? ' switch--on' : ''}`} aria-hidden="true">
 						<div class="switch__knob" />
 					</div>
-				</div>
+				</button>
 			))}
 		</div>
 	);

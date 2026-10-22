@@ -1,4 +1,4 @@
-import {LAYOUT} from '../theme/tokens';
+import {FONT, LAYOUT} from '../theme/tokens';
 import {clamp} from '../hooks/useKeys';
 import {Tile, type TileModel} from './Tile';
 
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const VIEWPORT_HEIGHT = 720;          // matches .grid__viewport height in global.css
-const LABEL_HEIGHT = 60;              // two-line tile label + its top margin (see .tile__label)
+const LABEL_HEIGHT = FONT.tileLabel * 2.4 + 14;
 const GRID_ROW_GAP = 40;              // matches .grid__track grid-row-gap
 const ROW_STEP = LAYOUT.tileSize + LABEL_HEIGHT + GRID_ROW_GAP;
 

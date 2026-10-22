@@ -1,0 +1,331 @@
+{
+  "public/icon.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icon.png",
+    "sha256": "ff896abb7a3621c937485a557166ef2b1394e62e4520f6d9a49afccb405b2e04",
+    "pixelsUnchanged": true,
+    "fileSha256": "1d14e618a1d0a14d0b99610268e2e67870fe48183b328dc0f7e3f352d7895e45"
+  },
+  "public/largeIcon.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/largeIcon.png",
+    "sha256": "1064d6f4df30deaf43ee5f77dc76663cd89e2f74e8b63589af1e3f64cb936358",
+    "pixelsUnchanged": true,
+    "fileSha256": "44e84131451255161c4e254790854e1f63876ac26b7e820f47bae5e8238de254"
+  },
+  "public/icons/apps/amazon.alexa.view.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/amazon.alexa.view.png",
+    "sha256": "85d4d556d1de51f9f3679686c5b168c1f932c384a9c2d83512cb8054f9bc1cd2",
+    "pixelsUnchanged": true,
+    "fileSha256": "acf663c7ee5805aa2858e44a54804e2f0c4ac787676c27ff82fed62e150235b7"
+  },
+  "public/icons/apps/amazon.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/amazon.png",
+    "sha256": "bb4e1793f131484c535769852887400bbc95eaa227c6bc75ae549014e0175939",
+    "pixelsUnchanged": true,
+    "fileSha256": "4acf364e6e2765dbf3deab1ba76b5eae957af10afcf3fec65463f13d31e9de1f"
+  },
+  "public/icons/apps/bbc.iplayer.3.0.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/bbc.iplayer.3.0.png",
+    "sha256": "7eb72b8295859b6fd8b0b87fc6d0cf86243ab96d717c17ec68f39b525d8c2b28",
+    "pixelsUnchanged": true,
+    "fileSha256": "97c320ef0ea64324fb1b7e42095831f31edfca805ba2830988d7f4b4eabe4328"
+  },
+  "public/icons/apps/bbc.sounds.1.0.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/bbc.sounds.1.0.png",
+    "sha256": "c12531d9d06eae42778c999971b6e495663bbd86c8e6c2cd9bf3580d77575434",
+    "pixelsUnchanged": true,
+    "fileSha256": "514c6cb0ed33d3b2bcf76262207c15affcf6136c73c989f93fa85064418f77b0"
+  },
+  "public/icons/apps/cdp-30.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/cdp-30.png",
+    "sha256": "7ee1fd2c73ac583959eaa0a9a3a10d4c54d5ea47987069622f22a76a1bc6c947",
+    "pixelsUnchanged": true,
+    "fileSha256": "1a678aea9c09d8c792b4ced70a09c41e3aaa0c0dab8a6e8c9f79ce84cdd1a399"
+  },
+  "public/icons/apps/com.apple.appletv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.apple.appletv.png",
+    "sha256": "831d0cee733f32ad92252110ff535f07d1586f7a89b5676f959dfbb56d315326",
+    "pixelsUnchanged": true,
+    "fileSha256": "eff99fd110aa5a7b6a1ca0293cae3a659047a5cbdd01007b74102de9fb595d80"
+  },
+  "public/icons/apps/com.fvp.ch4.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.fvp.ch4.png",
+    "sha256": "bb07206d19037e26dffaa7330f1d567efae5c2584964938a9e97d7902e741ffb",
+    "pixelsUnchanged": true,
+    "fileSha256": "8b6ae467c439c24b10388b1b42e9327ba25770e9eb138d2f64183e803b45b158"
+  },
+  "public/icons/apps/com.fvp.itv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.fvp.itv.png",
+    "sha256": "c7642c1645dd72ad06408629dcd3440758aef2622a7ebc0d49fd59833f59dd75",
+    "pixelsUnchanged": true,
+    "fileSha256": "c5d86694160e1b0080f6c1ac750e375655e54510b6a42c75a77ccbc14824e688"
+  },
+  "public/icons/apps/com.fvp.uktv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.fvp.uktv.png",
+    "sha256": "70ecf0483c9a4ac9602142c10d554377a04b76bab91650220e1b1f301c970f6f",
+    "pixelsUnchanged": true,
+    "fileSha256": "6a792879e1411364d80d3111a38d07fce506aac0578aafeece9eb0fd3375fd6e"
+  },
+  "public/icons/apps/com.lennylxx.iptv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.lennylxx.iptv.png",
+    "sha256": "c8eb22c75fee83e6b33957d42f3dd3ce722ef7d25b99279110fd80c3f6244c02",
+    "pixelsUnchanged": true,
+    "fileSha256": "d4910abcc62efbdb1287102389bd0781bc43941a4c553a5c319f72e32af4b9aa"
+  },
+  "public/icons/apps/com.webos.app.browser.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.webos.app.browser.png",
+    "sha256": "1d26c8b0129acf19d8d27fd08f37753e3a2243e8771c5c53b089234c2765b0cc",
+    "pixelsUnchanged": true,
+    "fileSha256": "015f95e7a6817d5901f5a0d3e4c81207be3ec82aff896a814e290aaa68499d9c"
+  },
+  "public/icons/apps/com.webos.app.homeconnect.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.webos.app.homeconnect.png",
+    "sha256": "282291345afda33c0618948cf2c23bced19b54965da9a70d731488ac280c805c",
+    "pixelsUnchanged": true,
+    "fileSha256": "f67b70286ecfb0d938ef97c264806713409bf089afa2f044fd0d4d888386da3e"
+  },
+  "public/icons/apps/com.webos.app.igallery.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.webos.app.igallery.png",
+    "sha256": "f5d4b6e7459910ecf11f0d2d09cd1a5740aacfa354d925a728ae51740df0844f",
+    "pixelsUnchanged": true,
+    "fileSha256": "eabd5d25d76ea4e63ada089b67798d92595105927486dbeaa3483724380c0fc4"
+  },
+  "public/icons/apps/com.webos.app.mediadiscovery.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.webos.app.mediadiscovery.png",
+    "sha256": "6103cff11dd7ddd74bb8b7bffdf7b85a47f656307dd90d3d7fc62d90f0f74e34",
+    "pixelsUnchanged": true,
+    "fileSha256": "677be765aa95d50c15b97dc0581f341a7a2d8a447df384e09ce57ad5062ae8c7"
+  },
+  "public/icons/apps/com.webos.app.sportsteamsettings.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/com.webos.app.sportsteamsettings.png",
+    "sha256": "1a6985fa117f0cb102136eff4075f188cb6269ca44ca41cb7ae3c9b107c0787d",
+    "pixelsUnchanged": true,
+    "fileSha256": "e388a648ce97c7153b5cdec1257efdcd9e6d1d02bb3873c95178abe3c78b80a8"
+  },
+  "public/icons/apps/demand5.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/demand5.png",
+    "sha256": "93bd23c58227c56a07f034404643935c127e2a759462b43e9d7e00a5f580783e",
+    "pixelsUnchanged": true,
+    "fileSha256": "cb24660af7a7c37fc041755ff443d35b24b6e121eebd46df217f8c20cebb124e"
+  },
+  "public/icons/apps/now.tv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/now.tv.png",
+    "sha256": "2047f1080c53e5bb833249a41ae87caa77455c2e2d4d7e0847b05c770ec2ea61",
+    "pixelsUnchanged": true,
+    "fileSha256": "83187947f83072ec9924e9cf51f9a1e3b09b1d7b258678aa8e1aff2fc7a19b5c"
+  },
+  "public/icons/apps/org.webosbrew.hbchannel.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/org.webosbrew.hbchannel.png",
+    "sha256": "252d842e64e9b8ec74d506e80913061e226eaaf5a7ce8b00eaebfdb92799e864",
+    "pixelsUnchanged": true,
+    "fileSha256": "a27c0381145f978ae93b64465d510855e3878c3cf0cf0256711d521d87707b90"
+  },
+  "public/icons/apps/org.webosbrew.inputhook.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/org.webosbrew.inputhook.png",
+    "sha256": "6eacec93acb87e10c4802dcdf236690cfbea63040c0e9d1110325a41d57a507c",
+    "pixelsUnchanged": true,
+    "fileSha256": "e121feec81758cb20a9daa581e8ca7771c1310df46e94122cc0321a245622314"
+  },
+  "public/icons/apps/org.webosbrew.safeupdate.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/org.webosbrew.safeupdate.png",
+    "sha256": "1adb3c8c7e004f0903e0ae5099589723cab1af367a1815b4fb7bf014a01b933a",
+    "pixelsUnchanged": true,
+    "fileSha256": "b656ef4a7714eff9ef65d80f445c8554e8eb9422f79f9b1d73f3cf6fab4b249c"
+  },
+  "public/icons/apps/tv.twitch.tv.starshot.lg.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/tv.twitch.tv.starshot.lg.png",
+    "sha256": "ac82491cfde14171136f24576b30e366a96731c9ff40e0bbbed6a058e3271bcd",
+    "pixelsUnchanged": true,
+    "fileSha256": "a2d2c66c42a655a47b2eb0d5538b0bbc2600fb47dc43985b4a67e1e4a98b7ef4"
+  },
+  "public/icons/apps/youtube.leanback.v4.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/apps/youtube.leanback.v4.png",
+    "sha256": "eaecc4d9b3595197c87e1ca02af950161e05b46e3fdd5b7cb7b3f3e64aae3ea5",
+    "pixelsUnchanged": true,
+    "fileSha256": "63fc500edec6a76a5147c7670f254e721fe4ebfbbac4491f7489b3f68ca92844"
+  },
+  "public/icons/inputs/HDMI_1.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/HDMI_1.png",
+    "sha256": "bcef9847edc16f5cfbf038662834191fcdfdbd622a55f29ce6bf5db28ef985ba",
+    "pixelsUnchanged": true,
+    "fileSha256": "0984a80cc18f11cd221edee3896207729fd3777652074cc2b9188be08b02eba4"
+  },
+  "public/icons/inputs/HDMI_2.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/HDMI_2.png",
+    "sha256": "d17f97f750179264fdc9d96f120f8712932c185bf310780b1b8cca35816adeb3",
+    "pixelsUnchanged": true,
+    "fileSha256": "e5e06c0b41ad236c212e6bda4cf84b5938c0ea898363e75c9028197740a2380e"
+  },
+  "public/icons/inputs/HDMI_3.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/HDMI_3.png",
+    "sha256": "76cfceeba4d22f71999bf9f9911e8798058e92b7038055ff2e1fa88b956ee1c5",
+    "pixelsUnchanged": true,
+    "fileSha256": "e32ca09d5787abc43c6c2b2df62faf5137c9fb677faca56c26df7f3c8f655e68"
+  },
+  "public/icons/inputs/HDMI_4.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/HDMI_4.png",
+    "sha256": "4d3b7c30f119714b2ffa316bd98ecd18d89854140ecd9609c77f39e02611216d",
+    "pixelsUnchanged": true,
+    "fileSha256": "b0937aecaf360f6da7050383fe678100e163853cecb4c17143c254aea1354605"
+  },
+  "public/icons/inputs/HDMI_sub.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/HDMI_sub.png",
+    "sha256": "28a1f1ec0849584b8c981d1a09bcbabc05fc9605d4d98448ee8c6793069b7665",
+    "pixelsUnchanged": true,
+    "fileSha256": "a0e0675f9f19836c92eba43fbad58d89b0106dfff112e38c761d4490440656d8"
+  },
+  "public/icons/inputs/antenna.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/antenna.png",
+    "sha256": "68724d2b61cef9b012da97433ae68bc57205a6534eb4cc21d9050ecb97504062",
+    "pixelsUnchanged": true,
+    "fileSha256": "3feef4965e2d7b70cf47b3da40480f10248896d0631f49dcf5a555faf4391865"
+  },
+  "public/icons/inputs/av.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/av.png",
+    "sha256": "dcf5b31ffd2ad07554f6ef4cc98a59f20094598af513e7f2ee195cbcb2a74537",
+    "pixelsUnchanged": true,
+    "fileSha256": "12f788bef814f328f1c782e816cf75f402a673e99e143d1428211e086c31c092"
+  },
+  "public/icons/inputs/bluray.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/bluray.png",
+    "sha256": "aaa73e04cb09b7a023c55de1d10b80d6fc7d3c60486400ec9d1e144e7eb9bf9f",
+    "pixelsUnchanged": true,
+    "fileSha256": "1ecab170c185fc056022aa2536122212b00a3f5ff431b0b611aaca34b1afde64"
+  },
+  "public/icons/inputs/camera.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/camera.png",
+    "sha256": "d775eb30b204a08a6a791f565ccb45e910794a877b1f46eb945b03ef5a4358bf",
+    "pixelsUnchanged": true,
+    "fileSha256": "b34b8659abede1c06296ad02afcc7f778f1c45802d688658f77fc941384a6442"
+  },
+  "public/icons/inputs/component.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/component.png",
+    "sha256": "20691e105f718e952f3d15250bb68fcd375e91a61888197ed1743aff8bc3a8e7",
+    "pixelsUnchanged": true,
+    "fileSha256": "ffe2cfdae14e398d99da07f0ef5c10dde97baf3548d00627065abb0a3c3fc348"
+  },
+  "public/icons/inputs/dlna.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/dlna.png",
+    "sha256": "5380496183359ae9ed5b99b22be3be643f2e002eb415bbe129c040dfaf996aaf",
+    "pixelsUnchanged": true,
+    "fileSha256": "9f805dbf14c373bb08b98a511a3e19d8d3fc6cbf0de79b52d856745669e7dfb7"
+  },
+  "public/icons/inputs/dvd.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/dvd.png",
+    "sha256": "83a56c8c2523d916f92387cb4ea8c53a9c4224059d50e29e7c9294a162c2da61",
+    "pixelsUnchanged": true,
+    "fileSha256": "66c79f42b859d4e4d6ee57ff54793e8674b5337d54ef169b5d6b900de7cf29cd"
+  },
+  "public/icons/inputs/gameconsole.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/gameconsole.png",
+    "sha256": "3b60771a51dc2a5b8300efdc3cb61276e49784c132fea910cd4c64f833fa0e63",
+    "pixelsUnchanged": true,
+    "fileSha256": "72bbf6199c4eb9589577a8d888ea8a34e757b0015c822f2e84f84069bd6e2167"
+  },
+  "public/icons/inputs/hdmigeneric.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/hdmigeneric.png",
+    "sha256": "b64e8463d8867d3defcecae0f1c5f7b8af72360b15c56230b3274b1b815f3730",
+    "pixelsUnchanged": true,
+    "fileSha256": "a099c38b28697d4c637956465f195759ccc94404ce4822cfc0e9061bb6846dc9"
+  },
+  "public/icons/inputs/hometheater.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/hometheater.png",
+    "sha256": "d738360a65b36158261f1dab001b7bef487586c8c0797c499efa07504ded116d",
+    "pixelsUnchanged": true,
+    "fileSha256": "4d4c1b4feb830ae12878c9b07b94980f8f3d2f89e92353f9316a6c46bf211f27"
+  },
+  "public/icons/inputs/inputhub.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/inputhub.png",
+    "sha256": "60b6aafa35569b87428959940aff1e54a04fd5f4a2230b55d22e839141c46f1f",
+    "pixelsUnchanged": true,
+    "fileSha256": "227664e5a84f5072393872506c13360e647c272e4fb7fa76e218f4762813d7c6"
+  },
+  "public/icons/inputs/mediaServer.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/mediaServer.png",
+    "sha256": "29ba69d437896101ba3fc42426e239ad5f67445ca2987a601a816be419b134d8",
+    "pixelsUnchanged": true,
+    "fileSha256": "01e590bca030ca9e583ee8740dbf2d4ac037d188fb8159b8389da5874c1ac642"
+  },
+  "public/icons/inputs/mobile.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/mobile.png",
+    "sha256": "896751331dc6f6cd4228b16c075cf131446317b862c37757471d1f67d6ee2642",
+    "pixelsUnchanged": true,
+    "fileSha256": "837d0790ab3d51b1a1c9f7778a8465bbad9f514968627565be87c5982ca8978c"
+  },
+  "public/icons/inputs/pc.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/pc.png",
+    "sha256": "53178db9914670cdf8712141332d5dee4aba55a8a2c6585ef5fd507995075f75",
+    "pixelsUnchanged": true,
+    "fileSha256": "3b7fc41899862ab5e0618c360e51a8ba6546c630868359ff4db70138b24e855f"
+  },
+  "public/icons/inputs/portaltv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/portaltv.png",
+    "sha256": "5abc5135fd33bdc0391aa49c07afa6b2ed4bb43b09c024237bee9f4e435c2b03",
+    "pixelsUnchanged": true,
+    "fileSha256": "9c6c59b75ba352d8aaa303dd7b578d41a3596663d2b410f2b050309279473930"
+  },
+  "public/icons/inputs/satellite.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/satellite.png",
+    "sha256": "aae414319a809fd7641b89b2bb4de94c100c34f7e7d4b97d6b4885362298ba00",
+    "pixelsUnchanged": true,
+    "fileSha256": "e54cd027243331bdd5a3e19eed1529996176d97304ab29d2f9c11be307553852"
+  },
+  "public/icons/inputs/scart.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/scart.png",
+    "sha256": "1f346c94afd629b6fbfab4a6578e5fb94ce6a63b86dffca45b89de03966da512",
+    "pixelsUnchanged": true,
+    "fileSha256": "e0ee5e965448692bac1e896a8389aea9bb3c9e4ada501ffce819704b33848765"
+  },
+  "public/icons/inputs/screenshare.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/screenshare.png",
+    "sha256": "8419bff79d7830867fcdab10e41fbd022baa4dd2db214bfe4293bf402659babe",
+    "pixelsUnchanged": true,
+    "fileSha256": "709acd2889d1d5190765059f12e58cd326de3779372400a9cd30f305f34effdc"
+  },
+  "public/icons/inputs/settopbox.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/settopbox.png",
+    "sha256": "1a21970741db75e7808d366faf16f00abe3fcd1cbac2538e321c50a9d94e3565",
+    "pixelsUnchanged": true,
+    "fileSha256": "9fa13246336248d357e06f1fe5a66d190938ba3a6201a0ec84c1ed3c9bdd8d09"
+  },
+  "public/icons/inputs/sound.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/sound.png",
+    "sha256": "b41e9e6cd108de9ca2aee8ca8fa165ecf6adf4b591d41621cccd379f56345a4a",
+    "pixelsUnchanged": true,
+    "fileSha256": "6e29c2d338b5049e1e955d013a51e38c89c920ede5dc8896ec3352042cbea0a7"
+  },
+  "public/icons/inputs/streamingbox.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/streamingbox.png",
+    "sha256": "45a2939adb21215462596e20994de6def4ecccc1a5ea656add54f9bc69a33bc8",
+    "pixelsUnchanged": true,
+    "fileSha256": "c3752fb965fc2f50dada0ff14f3c848d083e504daba3de4ce6678d5d8c3aa0e0"
+  },
+  "public/icons/inputs/tv.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/tv.png",
+    "sha256": "5a00c74d1c151299a1bd80796a11ec9c5086398a368ea8a19ad11923e5d39bce",
+    "pixelsUnchanged": true,
+    "fileSha256": "461d04a94d75982b4a158196cd7215d98d4434cd83260db355fa0bac682648e9"
+  },
+  "public/icons/inputs/usb-port.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/usb-port.png",
+    "sha256": "5747767f27ed69ca37e3a17dbfecc4222411f055cfff39160046f7f49200a22a",
+    "pixelsUnchanged": true,
+    "fileSha256": "e0b98c43adc0701046fa600a8b19309423cf1ef2da4f4e605e91c648ab42bed8"
+  },
+  "public/icons/inputs/usb.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/usb.png",
+    "sha256": "2f97eb1dc5db436230b23f8f7c66b519895736f97437944f8bc427cbaf50863f",
+    "pixelsUnchanged": true,
+    "fileSha256": "44062223d52728502435d3c8e5cc20a69aae9a87a982e289038d8b304130d887"
+  },
+  "public/icons/inputs/vcr.png": {
+    "source": "https://github.com/partridgeworks/webos-launcher/blob/1e2c39b9a988ceb1b258e40e3592bda84a2aa076/public/icons/inputs/vcr.png",
+    "sha256": "37410faf8ce982572a4261998ad5a3c4fff060a15ea35d15f1c644ac2cabe465",
+    "pixelsUnchanged": true,
+    "fileSha256": "72a479048728cbe0177bfb38d3690ef6585c4a3253cf76d5f868655bf5fbecf4"
+  },
+  "public/icons/brands/disneyplus.jpg": {
+    "source": "https://press.disneyplus.com/about/logos",
+    "asset": "https://lumiere-a.akamaihd.net/v1/images/disney_logo_march_2024_050fef2e.png?region=0%2C0%2C1920%2C1080",
+    "pixelsUnchanged": true
+  }
+}

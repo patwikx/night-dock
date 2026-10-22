@@ -6,7 +6,25 @@ import type {TileModel} from '../components/Tile';
 
 const INPUT_ICON_DIR = 'icons/inputs/';
 
+const BRANDS: Record<string, {logo?: string; image?: string; color: string}> = {
+	netflix: {logo: 'netflix', color: '#111113'},
+	'youtube.leanback.v4': {logo: 'youtube', color: '#ffffff'},
+	amazon: {color: '#0578ff'},
+	'com.disney.disneyplus-prod': {image: 'icons/brands/disneyplus.jpg', color: '#001c28'},
+	'com.apple.appletv': {logo: 'appletv', color: '#141416'},
+	'com.wbd.stream': {logo: 'max', color: '#111113'},
+	'cdp-30': {logo: 'plex', color: '#202124'},
+	'spotify-beehive': {logo: 'spotify', color: '#1ed760'},
+	'tv.twitch.tv.starshot.lg': {logo: 'twitch', color: '#9146ff'},
+	'org.jellyfin.webos': {logo: 'jellyfin', color: '#222b44'}
+};
+
 export function appTile (app: AppEntry): TileModel {
+	const brand = BRANDS[app.id];
+	if (brand) return {
+		key: app.id, label: app.title, color: brand.color, logo: !!brand.logo,
+		imageUrl: brand.logo ? `icons/brands/${brand.logo}.svg` : brand.image || app.iconUrl
+	};
 	return {key: app.id, label: app.title, imageUrl: app.iconUrl, color: app.color};
 }
 

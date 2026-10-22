@@ -1,0 +1,27 @@
+{
+  "reducedMotion": {
+    "matches": true,
+    "artTransform": "none",
+    "outerTransform": "none"
+  },
+  "foreground": {
+    "hidden": false,
+    "timers": [
+      13328
+    ],
+    "apps": 5
+  },
+  "youtube": "{\"returnValue\":true,\"appId\":\"youtube.leanback.v4\",\"appCategory\":[],\"processId\":\"\",\"windowId\":\"\"}",
+  "background": {
+    "hidden": true,
+    "timers": []
+  },
+  "resumed": {
+    "hidden": false,
+    "timers": [
+      10786
+    ],
+    "clock": "12:53AM",
+    "focus": "YouTube"
+  }
+}

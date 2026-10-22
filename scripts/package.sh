@@ -7,6 +7,7 @@ cd "$(dirname "$0")/.."
 # Ship this project's own licence next to the third-party ones (public/licenses/).
 mkdir -p dist/licenses
 cp LICENSE dist/licenses/LICENSE.txt
+cp THIRD_PARTY_NOTICES.md dist/licenses/THIRD_PARTY_NOTICES.md
 mkdir -p build
 rm -f build/*.ipk
 npx ares-package dist --no-minify -o build

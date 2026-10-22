@@ -28,6 +28,7 @@ export function App () {
 	const [screen, setScreen] = useState<Screen>('home');
 	const [config, setConfig] = useState<UserConfig>(loadConfig);
 	const [apps, setApps] = useState<AppEntry[]>([]);
+	const [appsLoading, setAppsLoading] = useState(true);
 	const [inputs, setInputs] = useState<InputSource[]>([]);
 	const [toast, setToast] = useState<ToastMessage | null>(null);
 	const toastTimer = useRef(0);
@@ -45,12 +46,14 @@ export function App () {
 	// Load apps at start and whenever the Homebrew option changes; refresh inputs whenever
 	// the app comes back to the foreground (labels or connections may have changed).
 	useEffect(() => {
+		setAppsLoading(true);
 		listApps(config.useHomebrew)
 			.then(({apps: list, source}) => {
 				setApps(list);
 				if (config.useHomebrew && source !== 'homebrew') showToast('Homebrew Channel not available, using the built-in app list', 'error');
 			})
-			.catch(() => showToast('Could not read the app list', 'error'));
+			.catch(() => showToast('Could not read the app list. Reopen Launcher to try again.', 'error'))
+			.finally(() => setAppsLoading(false));
 	}, [config.useHomebrew, showToast]);
 
 	useEffect(() => {
@@ -129,7 +132,7 @@ export function App () {
 	return (
 		<>
 			{/* Home stays mounted under Settings so it keeps its focus position. */}
-			<Home rows={rows} active={screen === 'home'} onActivate={onActivate} />
+			<Home rows={rows} active={screen === 'home'} loading={appsLoading} onActivate={onActivate} />
 			{screen === 'settings' && <Settings tabs={tabs} options={options} active onToggle={onToggle} onReorder={onReorder} onOption={onOption} onClose={() => setScreen('home')} />}
 			<Toast message={toast} />
 		</>

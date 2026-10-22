@@ -1,3 +1,4 @@
+import {useState} from 'preact/hooks';
 import {CheckMark, Glyph, type GlyphName} from './Glyph';
 
 /** Everything a tile needs to draw itself; rows and grids build these from app/input data. */
@@ -12,6 +13,7 @@ export interface TileModel {
 	glyph?: GlyphName;
 	/** monogram background when there is no artwork */
 	color?: string;
+	logo?: boolean;
 }
 
 interface Props {
@@ -28,12 +30,14 @@ interface Props {
 }
 
 export function Tile ({model, focused, lifted, checked, dimmed, onHover, onActivate}: Props) {
+	const [failedImage, setFailedImage] = useState<string | undefined>();
 	const classes = ['tile', focused && 'tile--focused', lifted && 'tile--lifted', dimmed && 'tile--dimmed'].filter(Boolean).join(' ');
 	return (
-		<div class={classes} onMouseEnter={onHover} onClick={onActivate}>
-			<div class="tile__box" style={model.color && !model.imageUrl ? {background: model.color} : undefined}>
-				{model.imageUrl
-					? <img class="tile__image" src={model.imageUrl} alt="" />
+		<button type="button" class={classes} aria-label={model.label} aria-pressed={checked === undefined ? undefined : checked}
+			tabIndex={focused ? 0 : -1} onFocus={() => { if (!focused && onHover) onHover(); }} onMouseMove={onHover} onClick={onActivate}>
+			<div class="tile__box" style={model.color ? {background: model.color} : undefined}>
+				{model.imageUrl && failedImage !== model.imageUrl
+					? <img class={`tile__image${model.logo ? ' tile__image--logo' : ''}`} src={model.imageUrl} alt="" onError={() => setFailedImage(model.imageUrl)} />
 					: model.glyphImageUrl
 						? <img class="tile__image tile__image--glyph" src={model.glyphImageUrl} alt="" />
 						: model.glyph
@@ -42,6 +46,6 @@ export function Tile ({model, focused, lifted, checked, dimmed, onHover, onActiv
 				{checked && <div class="tile__badge"><CheckMark /></div>}
 			</div>
 			<div class="tile__label">{model.label}</div>
-		</div>
+		</button>
 	);
 }

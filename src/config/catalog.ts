@@ -30,6 +30,7 @@ export interface LocalCatalog {
 }
 
 const BASE_CATALOG: CatalogApp[] = [
+	{id: 'io.strem.tv', title: 'Stremio', icon: 'io.strem.tv.png', color: '#100f1f'},
 	// Global streaming
 	{id: 'youtube.leanback.v4', title: 'YouTube', icon: 'youtube.leanback.v4.png'},
 	{id: 'netflix', title: 'Netflix', color: '#b1060f'},
