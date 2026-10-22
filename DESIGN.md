@@ -12,10 +12,10 @@ Settings restores the prior full-screen Apps / Sources / Options tabs and six-co
 
 Selection uses a single filled surface without an extra outline or enlargement. Both grids include internal scroll padding so focused containers stay fully visible. The clock remains unchanged at the user's request.
 
-Launch feedback uses a centered dark panel with a clear input icon, larger text, and a single Back to dock button. The orange accent rule is removed. Browser previews describe input switching accurately. TV loading and error feedback use the same panel.
+Apps and sources launch directly without a loading panel or dialog. Home keeps its current selection and remains usable during the service call. Failed launches and browser-only attempts show a small notice without taking focus. Back, a new launch, opening Settings or Sources, or returning to the launcher clears the notice. Older handoff callbacks cannot replace feedback for a newer launch.
 
-All overlay surfaces now use night-tinted glass with translucent fill and a shared 22px backdrop blur. Settings uses only the landscape behind the glass; the Home dock and controls are hidden while Settings is open. Sources and launch feedback use the same material. The cream focus fill remains unchanged, without an extra ring.
+All overlay surfaces now use night-tinted glass with translucent fill and a shared 22px backdrop blur. Settings uses only the landscape behind the glass; the Home dock and controls are hidden while Settings is open. Sources and launch notices use the same material. The cream focus fill remains unchanged, without an extra ring.
 
-Home-only motion adds short focus-color transitions, a 2px artwork lift inside the fixed selection container, and smooth vertical dock scrolling. Transitions run only while Home is active and stop at rest. Reduced-motion preferences disable the artwork lift and smooth scroll while keeping brief color feedback. Settings, Sources, and launch-panel motion are unchanged.
+Home-only motion adds short focus-color transitions, a 2px artwork lift inside the fixed selection container, and smooth vertical dock scrolling. Transitions run only while Home is active and stop at rest. Reduced-motion preferences disable the artwork lift and smooth scroll while keeping brief color feedback. Settings and Sources motion are unchanged. Launch notices have no animation.
 
 Performance version 1.1.2 preserves the rendered design and motion. Removed only obsolete styles and duplicate bundled assets. Focus updates touch only changed nodes; unchanged grids and menus are reused. Home's selected apps are verified before remaining Settings entries, and the clock pauses in the background. Performance evidence is in the workspace's performance/REPORT.md.

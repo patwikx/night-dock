@@ -46,16 +46,7 @@
             <span><kbd>Back</kbd> return</span>
           </div>
 
-          <div class="overlay" id="launchOverlay" hidden>
-            <div class="launch" role="dialog" aria-modal="true" aria-labelledby="launchName" aria-describedby="launchStatus launchNote">
-              <div class="launch__plate" id="launchPlate"></div>
-              <div class="launch__name" id="launchName">YouTube</div>
-              <div class="launch__status" id="launchStatus">Opening…</div>
-              <div class="launch__note" id="launchNote"></div>
-              <button type="button" class="launch__back" id="launchBack">Back to dock</button>
-              <div class="launch__keyhint">OK or Back returns</div>
-            </div>
-          </div>
+          <div class="launch-notice" id="launchNotice" role="status" aria-live="polite" aria-atomic="true" hidden></div>
 
           <section class="nd-settings" id="settingsPanel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
             <header class="nd-settings__header"><div><h1 id="settingsTitle">Settings</h1><p id="settingsHint"></p></div><button type="button" class="nd-control" id="settingsClose">Back to Home</button></header>

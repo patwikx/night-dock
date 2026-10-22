@@ -4,7 +4,7 @@ A custom launcher for LG webOS TVs with a night-lake background, translucent gla
 
 The Night Dock design customization, implementation, optimization, and documentation were done by **GPT 6.1 Sol High**. The upstream launcher and third-party assets retain their original attribution.
 
-Version 1.1.2 was tested on an LG 55UT8050PSB running firmware 33.31.75 and webOS 10.3.2. The screenshots below are from the launcher running on the TV at 1920 × 1080.
+Version 1.1.3 was tested on an LG 55UT8050PSB running firmware 33.31.75 and webOS 10.3.2. The screenshots below are from the launcher running on the TV at 1920 × 1080.
 
 ## Home
 
@@ -87,7 +87,7 @@ npm run build
 npm run package
 ```
 
-The package is written to `build/works.partridge.webos-launcher_1.1.2_all.ipk`. The existing app ID is retained for compatibility with saved preferences and Home-button mappings.
+The package is written to `build/works.partridge.webos-launcher_1.1.3_all.ipk`. The existing app ID is retained for compatibility with saved preferences and Home-button mappings.
 
 For a rooted TV, copy `tv.env.example` to the ignored `tv.env`, set `TV_HOST` to your SSH alias or TV address, and run:
 

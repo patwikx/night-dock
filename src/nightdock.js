@@ -7,7 +7,7 @@ export function startNightDock(runtime) {
   apps.forEach(function(app) { shown[app.id] = runtime.config.appIds.indexOf(app.id)>=0; });
   var mode='home', zone='apps', index=0, utility=0, inputIndex=0, pointerTarget=null;
   var tab=0, settingsZone='tabs', gridIndex=0, reordering=false, held=null;
-  var settingsReturn=null, launchReturn=null, enterTimer=0, longPressed=false;
+  var settingsReturn=null, launchRequest=0, pendingLaunch=null, enterTimer=0, longPressed=false;
   var elements=Object.create(null);
   var $=function(id){return elements[id]||(elements[id]=document.getElementById(id));};
   var panel=$('settingsPanel'), menu=$('sourcesMenu'), viewport=$('settingsViewport');
@@ -106,6 +106,7 @@ export function startNightDock(runtime) {
     if(focus&&target){target.focus({preventScroll:true});target.scrollIntoView({block:'nearest'});}
   }
   function openSources(){
+    clearLaunchNotice();
     mode='sources';zone='utilities';utility=2;menu.hidden=false;$('sourcesButton').setAttribute('aria-expanded','true');
     buildSources();renderHome(false);renderSources(true);
   }
@@ -176,6 +177,7 @@ export function startNightDock(runtime) {
     }}
   }
   function openSettings(){
+    clearLaunchNotice();
     if(!runtime.appsReady){
       var request=++settingsRequest;
       runtime.ensureApps().then(function(){if(mode==='home'&&request===settingsRequest)openSettings();}).catch(function(){if(mode==='home'&&request===settingsRequest){runtime.appsReady=true;openSettings();}});
@@ -230,23 +232,29 @@ export function startNightDock(runtime) {
     }
     renderSettings(true);
   }
+  function clearLaunchNotice(){ $('launchNotice').hidden=true;$('launchNotice').textContent=''; }
+  function showLaunchNotice(message){ $('launchNotice').textContent=message;$('launchNotice').hidden=false; }
   function launch(item,kind){
-    if(!item)return;
-    launchReturn={zone:zone,index:index,utility:utility};mode='launch';renderHome(false);
-    $('launchPlate').innerHTML='';$('launchPlate').appendChild(art(item,kind==='input'?'launch-art launch-art--input':'launch-art'));
-    $('launchName').textContent=item.name;$('launchStatus').textContent=runtime.isTV?'Opening…':'Browser preview';
-    $('launchNote').textContent=runtime.isTV?'':kind==='input'?'Input switching is available on your TV.':'App launching is available on your TV.';
-    $('launchOverlay').hidden=false;$('launchOverlay').classList.add('is-open');$('launchBack').classList.add('is-focused');$('launchBack').focus({preventScroll:true});
-    if(runtime.isTV)runtime.launch(item.id).then(closeLaunch).catch(function(error){if(mode==='launch'){$('launchStatus').textContent="Couldn't open "+item.name;$('launchNote').textContent=error.message+'. Press Back to return.';}});
-  }
-  function closeLaunch(){
-    if(mode!=='launch')return;mode='home';$('launchOverlay').hidden=true;$('launchOverlay').classList.remove('is-open');
-    if(launchReturn){zone=launchReturn.zone;index=launchReturn.index;utility=launchReturn.utility;}renderHome(true);
+    if(!item||pendingLaunch===item.id)return;
+    clearLaunchNotice();renderHome(true);
+    var request=++launchRequest;
+    if(!runtime.isTV){
+      showLaunchNotice(item.name+': '+(kind==='input'?'Input switching':'App launching')+' is available on your TV.');
+      return;
+    }
+    pendingLaunch=item.id;
+    // Keep Home usable during the service call. Ignore callbacks from an older handoff.
+    Promise.resolve().then(function(){return runtime.launch(item.id);}).then(function(){
+      if(request===launchRequest)pendingLaunch=null;
+    }).catch(function(){
+      if(request!==launchRequest)return;
+      pendingLaunch=null;
+      showLaunchNotice("Couldn't open "+item.name+'. Try again or choose another app or source.');
+    });
   }
   function activate(){if(zone==='apps')launch(visible()[index],'app');else if(utility===1)openSettings();else if(utility===2)openSources();else launch({id:'com.webos.app.home',name:'LG Home',art:'icon.png'},'app');}
   function handle(key){
     settingsRequest++;
-    if(mode==='launch'){if(['Enter',' ','Backspace','Escape'].indexOf(key)>=0)closeLaunch();return;}
     if(mode==='sources'){
       if(key==='Backspace'||key==='Escape'||key==='ArrowLeft'){closeSources();return;}
       if(key==='ArrowUp'){if(inputIndex===0){closeSources();return;}inputIndex--;}
@@ -254,7 +262,7 @@ export function startNightDock(runtime) {
       if(key==='Enter'||key===' '){var input=inputs[inputIndex];if(input){closeSources();launch(input,'input');}return;}renderSources(true);return;
     }
     if(mode==='settings'){if(key==='Enter'||key===' ')settingsActivate();else settingsKey(key);return;}
-    if(key==='Enter'||key===' ')activate();else if(key==='Backspace'||key==='Escape'){zone=visible().length?'apps':'utilities';index=0;renderHome(true);}else moveHome(key);
+    if(key==='Enter'||key===' ')activate();else if(key==='Backspace'||key==='Escape'){clearLaunchNotice();zone=visible().length?'apps':'utilities';index=0;renderHome(true);}else moveHome(key);
   }
   function normalized(event){return event.keyCode===461?'Backspace':event.key;}
   document.addEventListener('keydown',function(event){
@@ -274,7 +282,6 @@ export function startNightDock(runtime) {
   utilityEls.forEach(function(el,i){bindPointer(el,function(){if(mode==='home'){zone='utilities';utility=i;renderHome(false);}});el.onclick=function(){if(mode==='sources'&&i===2){closeSources();return;}if(mode==='home'){zone='utilities';utility=i;activate();}};});
   $('settingsClose').onclick=closeSettings;bindPointer($('settingsClose'),function(){settingsZone='close';renderSettings(false);});
   $('reorderButton').onclick=setReorder;bindPointer($('reorderButton'),function(){settingsZone='reorder';renderSettings(false);});
-  $('launchBack').onclick=closeLaunch;
   document.addEventListener('pointerdown',function(event){if(mode==='sources'&&!menu.contains(event.target)&&!$('sourcesButton').contains(event.target))closeSources();});
   var clockTimer=0,clockMinute=-1;
   var dateFormatter=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long'});
@@ -293,7 +300,7 @@ export function startNightDock(runtime) {
   }
   function fit(){homeBounds=null;var scale=Math.min(innerWidth/1920,innerHeight/1080);$('stageScaler').style.width=1920*scale+'px';$('stageScaler').style.height=1080*scale+'px';$('stage').style.transform='scale('+scale+')';}
   window.addEventListener('resize',fit);
-  function onForeground(){pointerTarget=null;clearTimeout(enterTimer);enterTimer=0;if(!document.hidden&&mode==='launch')closeLaunch();updateClock();}
+  function onForeground(){pointerTarget=null;clearTimeout(enterTimer);enterTimer=0;launchRequest++;pendingLaunch=null;clearLaunchNotice();if(!document.hidden&&mode==='home')renderHome(true);updateClock();}
   document.addEventListener('visibilitychange',onForeground);document.addEventListener('webOSRelaunch',onForeground);
   buildDock();buildSources();if(!visible().length){zone='utilities';utility=1;}renderHome(true);updateClock();fit();$('bootStatus').hidden=true;
   return {
