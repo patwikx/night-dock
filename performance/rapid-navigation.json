@@ -1,0 +1,361 @@
+{
+  "fromVersion": "1.1.3",
+  "toVersion": "1.1.4",
+  "device": "LG 55UT8050PSB",
+  "webOS": "10.3.2",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "before": [
+    {
+      "results": [
+        {
+          "name": "home-left-edge",
+          "events": 300,
+          "dispatchMs": 24.29999999993015,
+          "handlerMs": 21.499999999650754,
+          "maxHandlerMs": 0.30000000004656613,
+          "focusCalls": 300,
+          "mutations": 0,
+          "framesOver33": 0,
+          "maxFrameMs": 16.79999999998836,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 408.29999999993015,
+          "handlerMs": 406.699999999837,
+          "maxHandlerMs": 5.400000000023283,
+          "focusCalls": 100,
+          "mutations": 400,
+          "framesOver33": 1,
+          "maxFrameMs": 400,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-8ms",
+          "events": 60,
+          "dispatchMs": 1204.4000000000233,
+          "handlerMs": 548.1000000004424,
+          "maxHandlerMs": 27.399999999906868,
+          "focusCalls": 60,
+          "mutations": 240,
+          "framesOver33": 20,
+          "maxFrameMs": 100,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-left-edge",
+          "events": 300,
+          "dispatchMs": 83.09999999997672,
+          "handlerMs": 80.89999999979045,
+          "maxHandlerMs": 10,
+          "focusCalls": 300,
+          "mutations": 2,
+          "framesOver33": 5,
+          "maxFrameMs": 116.60000000003492,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 328.29999999993015,
+          "handlerMs": 327,
+          "maxHandlerMs": 12.699999999953434,
+          "focusCalls": 100,
+          "mutations": 400,
+          "framesOver33": 2,
+          "maxFrameMs": 316.70000000001164,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-8ms",
+          "events": 60,
+          "dispatchMs": 856.2999999999302,
+          "handlerMs": 282.19999999995343,
+          "maxHandlerMs": 9.099999999976717,
+          "focusCalls": 60,
+          "mutations": 240,
+          "framesOver33": 16,
+          "maxFrameMs": 83.29999999998836,
+          "focused": "YouTube"
+        }
+      ],
+      "metrics": {
+        "ScriptDuration": 0.428831,
+        "LayoutDuration": 0.310289,
+        "RecalcStyleDuration": 0.967485,
+        "TaskDuration": 3.0111109999999996,
+        "RecalcStyleCount": 1302,
+        "LayoutCount": 326
+      }
+    },
+    {
+      "results": [
+        {
+          "name": "home-left-edge",
+          "events": 300,
+          "dispatchMs": 22.300000000046566,
+          "handlerMs": 19.69999999983702,
+          "maxHandlerMs": 0.2000000000698492,
+          "focusCalls": 300,
+          "mutations": 0,
+          "framesOver33": 0,
+          "maxFrameMs": 16.800000000046566,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 421.39999999990687,
+          "handlerMs": 420.19999999995343,
+          "maxHandlerMs": 7.5,
+          "focusCalls": 100,
+          "mutations": 400,
+          "framesOver33": 1,
+          "maxFrameMs": 400,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-8ms",
+          "events": 60,
+          "dispatchMs": 1197.3000000000466,
+          "handlerMs": 501.0999999992782,
+          "maxHandlerMs": 15.29999999993015,
+          "focusCalls": 60,
+          "mutations": 240,
+          "framesOver33": 20,
+          "maxFrameMs": 83.39999999996508,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-left-edge",
+          "events": 300,
+          "dispatchMs": 172.90000000002328,
+          "handlerMs": 170.49999999988358,
+          "maxHandlerMs": 112.5,
+          "focusCalls": 300,
+          "mutations": 0,
+          "framesOver33": 4,
+          "maxFrameMs": 166.60000000003492,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 648.9999999999418,
+          "handlerMs": 647.0999999998021,
+          "maxHandlerMs": 62.09999999997672,
+          "focusCalls": 100,
+          "mutations": 400,
+          "framesOver33": 3,
+          "maxFrameMs": 566.6999999999534,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-8ms",
+          "events": 60,
+          "dispatchMs": 3319.70000000007,
+          "handlerMs": 2249.9999999990687,
+          "maxHandlerMs": 1564.3999999999069,
+          "focusCalls": 60,
+          "mutations": 240,
+          "framesOver33": 11,
+          "maxFrameMs": 2233.29999999993,
+          "focused": "YouTube"
+        }
+      ],
+      "metrics": {
+        "ScriptDuration": 1.043575,
+        "LayoutDuration": 1.447548,
+        "RecalcStyleDuration": 1.309423,
+        "TaskDuration": 5.337599,
+        "RecalcStyleCount": 1303,
+        "LayoutCount": 325
+      }
+    }
+  ],
+  "after": [
+    {
+      "results": [
+        {
+          "name": "home-left-edge",
+          "events": 300,
+          "dispatchMs": 28.29999999993015,
+          "handlerMs": 24.799999999813735,
+          "maxHandlerMs": 1.7999999999301508,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 1,
+          "maxFrameMs": 33.30000000000291,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 8.099999999976717,
+          "handlerMs": 7,
+          "maxHandlerMs": 0.2999999999301508,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 0,
+          "maxFrameMs": 16.799999999995634,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-8ms",
+          "events": 60,
+          "dispatchMs": 949.2999999999302,
+          "handlerMs": 23.000000000116415,
+          "maxHandlerMs": 8.29999999993015,
+          "focusCalls": 22,
+          "mutations": 88,
+          "framesOver33": 11,
+          "maxFrameMs": 133.29999999999563,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-left-edge",
+          "events": 300,
+          "dispatchMs": 128.5,
+          "handlerMs": 124.69999999960419,
+          "maxHandlerMs": 17.70000000006985,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 0,
+          "maxFrameMs": null,
+          "focused": "Apps"
+        },
+        {
+          "name": "settings-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 19.70000000006985,
+          "handlerMs": 18.0999999998603,
+          "maxHandlerMs": 4.799999999930151,
+          "focusCalls": 1,
+          "mutations": 4,
+          "framesOver33": 1,
+          "maxFrameMs": 1666.5999999999985,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-8ms",
+          "events": 60,
+          "dispatchMs": 866.9000000000233,
+          "handlerMs": 15.899999999674037,
+          "maxHandlerMs": 2.199999999953434,
+          "focusCalls": 10,
+          "mutations": 40,
+          "framesOver33": 12,
+          "maxFrameMs": 166.60000000000582,
+          "focused": "YouTube"
+        }
+      ],
+      "metrics": {
+        "ScriptDuration": 0.731088,
+        "LayoutDuration": 0.141265,
+        "RecalcStyleDuration": 0.87091,
+        "TaskDuration": 4.502363,
+        "RecalcStyleCount": 152,
+        "LayoutCount": 41
+      }
+    },
+    {
+      "results": [
+        {
+          "name": "home-left-edge",
+          "events": 300,
+          "dispatchMs": 29.300000000046566,
+          "handlerMs": 27.099999999743886,
+          "maxHandlerMs": 0.9000000000232831,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 1,
+          "maxFrameMs": 33.299999999995634,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 13.900000000023283,
+          "handlerMs": 12.800000000162981,
+          "maxHandlerMs": 0.40000000002328306,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 0,
+          "maxFrameMs": 16.700000000004366,
+          "focused": "YouTube"
+        },
+        {
+          "name": "home-fast-8ms",
+          "events": 60,
+          "dispatchMs": 763.8999999999069,
+          "handlerMs": 15.29999999969732,
+          "maxHandlerMs": 0.7999999999301508,
+          "focusCalls": 12,
+          "mutations": 48,
+          "framesOver33": 13,
+          "maxFrameMs": 83.29999999999563,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-left-edge",
+          "events": 300,
+          "dispatchMs": 36.09999999997672,
+          "handlerMs": 33.1999999997206,
+          "maxHandlerMs": 0.30000000004656613,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 1,
+          "maxFrameMs": 33.400000000001455,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-synchronous",
+          "events": 100,
+          "dispatchMs": 7.599999999976717,
+          "handlerMs": 7.099999999976717,
+          "maxHandlerMs": 0.30000000004656613,
+          "focusCalls": 0,
+          "mutations": 0,
+          "framesOver33": 4,
+          "maxFrameMs": 66.69999999999709,
+          "focused": "YouTube"
+        },
+        {
+          "name": "settings-fast-8ms",
+          "events": 60,
+          "dispatchMs": 640,
+          "handlerMs": 13.899999999906868,
+          "maxHandlerMs": 0.6000000000931323,
+          "focusCalls": 12,
+          "mutations": 48,
+          "framesOver33": 12,
+          "maxFrameMs": 66.79999999999563,
+          "focused": "YouTube"
+        }
+      ],
+      "metrics": {
+        "ScriptDuration": 0.091119,
+        "LayoutDuration": 0.065469,
+        "RecalcStyleDuration": 0.164029,
+        "TaskDuration": 0.838467,
+        "RecalcStyleCount": 116,
+        "LayoutCount": 29
+      }
+    }
+  ],
+  "tvVerification": {
+    "home": "com.apple.appletv",
+    "settings": "1",
+    "edgeFocusCalls": 0,
+    "edgeMutations": 0,
+    "glass": "blur(22px) saturate(1.15)",
+    "configUnchanged": true
+  },
+  "browserAssertionsPassed": 42,
+  "navigationTestsPassed": 4,
+  "installedJavaScriptSHA256": "46af25c4609d60b5fc5b8a135e9589cfef103accf2cb8c252c4a2dbedb04b22b"
+}

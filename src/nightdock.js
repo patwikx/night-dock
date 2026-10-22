@@ -14,10 +14,21 @@ export function startNightDock(runtime) {
   var utilityEls=Array.from($('utilitiesNav').querySelectorAll('.utility'));
   function clamp(n,min,max){return Math.max(min,Math.min(max,n));}
   function findApp(id){return apps.find(function(app){return app.id===id;});}
-  var visibleCache=null, choicesVersion=0, dockDirty=true, appEls=[], sourceEls=[], homeBounds=null;
+  var visibleCache=null, choicesVersion=0, dockDirty=true, appEls=[], sourceEls=[], homeBounds=null, homeScrollDestination=null, settingsBounds=null;
   var homeFocus=null, sourceFocus=null, settingsFocus=null, settingsHeld=null, settingsTabs=[], settingsTiles=[];
   var lastMode=null, settingsBuildKey=null, sourcesSignature=null, inputsVersion=0, settingsRequest=0;
   var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var navigationFrame=0;
+  function cancelNavigationFrame(){if(navigationFrame){cancelAnimationFrame(navigationFrame);navigationFrame=0;}}
+  function paintNavigation(){
+    navigationFrame=0;
+    if(document.hidden)return;
+    if(mode==='home')renderHome(true);
+    else if(mode==='settings'){buildSettings(true);renderSettings(true);}
+  }
+  function queueNavigation(){if(!document.hidden&&!navigationFrame)navigationFrame=requestAnimationFrame(paintNavigation);}
+  function flushNavigation(){if(navigationFrame){cancelNavigationFrame();paintNavigation();}}
+
   function visible(){return visibleCache||(visibleCache=order.filter(function(app){return shown[app.id];}));}
   function invalidateApps(){visibleCache=null;choicesVersion++;dockDirty=true;}
   function focusElement(previous,next){
@@ -49,28 +60,32 @@ export function startNightDock(runtime) {
       el.onclick=function(){if(mode==='home'){zone='apps';index=i;launch(app,'app');}};
       fragment.lastChild.appendChild(el);appEls.push(el);
     });
-    rows.innerHTML='';rows.appendChild(fragment);dockDirty=false;homeFocus=null;homeBounds=null;
+    rows.innerHTML='';rows.appendChild(fragment);dockDirty=false;homeFocus=null;homeBounds=null;homeScrollDestination=null;
     index=clamp(index,0,Math.max(0,visible().length-1));renderHome(false);
   }
   function renderHome(focus){
-    if(lastMode!==mode){$('stage').classList.toggle('home-motion',mode==='home');lastMode=mode;pointerTarget=null;}
+    cancelNavigationFrame();
     var target=mode!=='home'?null:zone==='apps'?appEls[index]:utilityEls[utility];
+    var rows=null,destination=null;
+    // Read geometry before changing focus styles. Keep an in-flight scroll aimed at its latest row.
+    if(focus&&target&&zone==='apps'&&appEls.length>10){
+      rows=$('dockRows');
+      if(!homeBounds){var origin=rows.offsetTop;homeBounds=Array.from(rows.children).map(function(row){return {top:row.offsetTop-origin,height:row.offsetHeight};});}
+      var row=homeBounds[Math.floor(index/5)],top=row.top,current=rows.scrollTop,height=rows.clientHeight;
+      if(homeScrollDestination!==null&&Math.abs(current-homeScrollDestination)<1)homeScrollDestination=null;
+      if(top<current+16)destination=Math.max(0,top-16);
+      else if(top+row.height>current+height-16)destination=top+row.height-height+16;
+    }
+    if(lastMode!==mode){$('stage').classList.toggle('home-motion',mode==='home');lastMode=mode;pointerTarget=null;}
     homeFocus=focusElement(homeFocus,target);
-    if(focus&&target){
-      target.focus({preventScroll:true});
-      if(zone==='apps'&&appEls.length>10){
-        var rows=$('dockRows');
-        if(!homeBounds)homeBounds=Array.from(rows.children).map(function(row){return {top:row.offsetTop-rows.offsetTop,height:row.offsetHeight};});
-        var row=homeBounds[Math.floor(index/5)],top=row.top;
-        var destination=null;
-        if(top<rows.scrollTop+16)destination=Math.max(0,top-16);
-        else if(top+row.height>rows.scrollTop+rows.clientHeight-16)destination=top+row.height-rows.clientHeight+16;
-        if(destination!==null)rows.scrollTo({top:destination,behavior:reducedMotion.matches?'auto':'smooth'});
-      }
+    if(focus&&target&&document.activeElement!==target)target.focus({preventScroll:true});
+    if(destination!==null&&destination!==homeScrollDestination){
+      homeScrollDestination=destination;
+      rows.scrollTo({top:destination,behavior:reducedMotion.matches?'auto':'smooth'});
     }
   }
   function moveHome(key){
-    var count=visible().length;
+    var count=visible().length,previousZone=zone,previousIndex=index,previousUtility=utility;
     if(zone==='utilities'){
       if(key==='ArrowLeft')utility=Math.max(0,utility-1);
       if(key==='ArrowRight')utility=Math.min(2,utility+1);
@@ -81,7 +96,7 @@ export function startNightDock(runtime) {
       if(key==='ArrowUp'){if(index>=5)index-=5;else{zone='utilities';utility=1;}}
       if(key==='ArrowDown'&&Math.floor(index/5)<Math.floor((count-1)/5))index=Math.min(index+5,count-1);
     }
-    renderHome(true);
+    if(zone!==previousZone||index!==previousIndex||utility!==previousUtility)queueNavigation();
   }
   function buildSources(){
     var signature=JSON.stringify(inputs);
@@ -115,9 +130,9 @@ export function startNightDock(runtime) {
   function settingsHint(){
     return tab===1?'Choose an input to switch sources. All TV inputs are available.':tab===2?'OK changes an option. Back returns home.':held?'Arrows move the app. OK puts it down. Back cancels.':reordering?'OK picks up an app. Choose Done to finish.':'OK shows or hides an app. Hold OK or choose Re-order apps to change order.';
   }
-  function buildSettings(){
+  function buildSettings(deferRender){
     var key=tab+':'+reordering+':'+(tab===0?choicesVersion:inputsVersion)+':'+runtime.config.useHomebrew;
-    if(key===settingsBuildKey){renderSettings(false);return;}
+    if(key===settingsBuildKey){if(!deferRender)renderSettings(false);return;}
     settingsBuildKey=key;
     $('settingsTabs').innerHTML='';
 
@@ -151,17 +166,25 @@ export function startNightDock(runtime) {
         grid.appendChild(el);
       });
     }
-    settingsTabs=Array.from($('settingsTabs').children);settingsTiles=Array.from(grid.children);settingsFocus=null;settingsHeld=null;
+    settingsTabs=Array.from($('settingsTabs').children);settingsTiles=Array.from(grid.children);settingsFocus=null;settingsHeld=null;settingsBounds=null;
     setText($('settingsCount'),tab===0?visible().length+' apps on Home':tab===1?inputs.length+' available sources':'Launcher options');
-    renderSettings(false);
+    if(!deferRender)renderSettings(false);
   }
   function renderSettings(focus){
     if(mode!=='settings')return;
+    cancelNavigationFrame();
     var target=null;
     gridIndex=clamp(gridIndex,0,Math.max(0,settingsTiles.length-1));
     if(settingsZone==='tabs')target=settingsTabs[tab];
     else if(settingsZone==='grid')target=settingsTiles[gridIndex];
     else target=$(settingsZone==='reorder'?'reorderButton':'settingsClose');
+    var destination=null;
+    if(target&&focus&&settingsZone==='grid'){
+      if(!settingsBounds){var origin=$('settingsGrid').offsetTop;settingsBounds=settingsTiles.map(function(tile){return {top:tile.offsetTop-origin,height:tile.offsetHeight};});}
+      var bounds=settingsBounds[gridIndex],current=viewport.scrollTop,height=viewport.clientHeight;
+      if(bounds.top<current+16)destination=Math.max(0,bounds.top-16);
+      else if(bounds.top+bounds.height>current+height-16)destination=bounds.top+bounds.height-height+16;
+    }
     settingsFocus=focusElement(settingsFocus,target);
     var heldTarget=held?settingsTiles[gridIndex]:null;
     if(settingsHeld!==heldTarget){
@@ -170,11 +193,8 @@ export function startNightDock(runtime) {
       settingsHeld=heldTarget;
     }
     setText($('settingsHint'),settingsHint());
-    if(target&&focus){target.focus({preventScroll:true});if(settingsZone==='grid'){
-      var top=target.offsetTop-$('settingsGrid').offsetTop;
-      if(top<viewport.scrollTop+16)viewport.scrollTop=Math.max(0,top-16);
-      else if(top+target.offsetHeight>viewport.scrollTop+viewport.clientHeight-16)viewport.scrollTop=top+target.offsetHeight-viewport.clientHeight+16;
-    }}
+    if(target&&focus&&document.activeElement!==target)target.focus({preventScroll:true});
+    if(destination!==null)viewport.scrollTop=destination;
   }
   function openSettings(){
     clearLaunchNotice();
@@ -214,11 +234,11 @@ export function startNightDock(runtime) {
   }
   function settingsKey(key){
     if(key==='Backspace'||key==='Escape'){if(held)cancelHeld();else if(reordering){setReorder();}else closeSettings();return;}
-    var count=tab===2?1:settingsItems().length;
+    var count=tab===2?1:settingsItems().length,previousTab=tab,previousZone=settingsZone,previousIndex=gridIndex;
     if(held){var next=gridIndex;if(key==='ArrowLeft'&&gridIndex%6>0)next--;if(key==='ArrowRight'&&gridIndex%6<5)next++;if(key==='ArrowUp')next-=6;if(key==='ArrowDown')next+=6;moveHeld(next);return;}
     if(settingsZone==='tabs'){
-      if(key==='ArrowLeft'&&!reordering){tab=Math.max(0,tab-1);gridIndex=0;viewport.scrollTop=0;buildSettings();}
-      if(key==='ArrowRight'){if(tab<2&&!reordering){tab++;gridIndex=0;viewport.scrollTop=0;buildSettings();}else settingsZone='close';}
+      if(key==='ArrowLeft'&&!reordering){tab=Math.max(0,tab-1);gridIndex=0;}
+      if(key==='ArrowRight'){if(tab<2&&!reordering){tab++;gridIndex=0;}else settingsZone='close';}
       if(key==='ArrowUp')settingsZone='close';if(key==='ArrowDown'&&count)settingsZone='grid';
     }else if(settingsZone==='close'){
       if(key==='ArrowDown')settingsZone=tab===0?'reorder':'tabs';if(key==='ArrowLeft')settingsZone='tabs';
@@ -230,7 +250,8 @@ export function startNightDock(runtime) {
       if(key==='ArrowUp'){if(gridIndex>=6)gridIndex-=6;else settingsZone=tab===0&&gridIndex%6>=3?'reorder':'tabs';}
       if(key==='ArrowDown'&&Math.floor(gridIndex/6)<Math.floor((count-1)/6))gridIndex=Math.min(gridIndex+6,count-1);
     }
-    renderSettings(true);
+    if(tab!==previousTab)viewport.scrollTop=0;
+    if(tab!==previousTab||settingsZone!==previousZone||gridIndex!==previousIndex)queueNavigation();
   }
   function clearLaunchNotice(){ $('launchNotice').hidden=true;$('launchNotice').textContent=''; }
   function showLaunchNotice(message){ $('launchNotice').textContent=message;$('launchNotice').hidden=false; }
@@ -269,6 +290,7 @@ export function startNightDock(runtime) {
     var key=normalized(event);if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' ','Backspace','Escape'].indexOf(key)<0)return;
     event.preventDefault();pointerTarget=null;
     if(event.repeat&&(key==='Enter'||key===' '))return;
+    if(key.indexOf('Arrow')!==0)flushNavigation();
     if(mode==='settings'&&(key==='Enter'||key===' ')){
       if(enterTimer)return;longPressed=false;
       enterTimer=setTimeout(function(){enterTimer=0;if(mode==='settings'&&tab===0){longPressed=true;setReorder();}},600);return;
@@ -298,9 +320,10 @@ export function startNightDock(runtime) {
     }
     clockTimer=setTimeout(updateClock,60000-(Date.now()%60000)+20);
   }
-  function fit(){homeBounds=null;var scale=Math.min(innerWidth/1920,innerHeight/1080);$('stageScaler').style.width=1920*scale+'px';$('stageScaler').style.height=1080*scale+'px';$('stage').style.transform='scale('+scale+')';}
+  $('dockRows').addEventListener('wheel',function(){homeScrollDestination=null;},{passive:true});
+  function fit(){homeBounds=null;homeScrollDestination=null;settingsBounds=null;var scale=Math.min(innerWidth/1920,innerHeight/1080);$('stageScaler').style.width=1920*scale+'px';$('stageScaler').style.height=1080*scale+'px';$('stage').style.transform='scale('+scale+')';}
   window.addEventListener('resize',fit);
-  function onForeground(){pointerTarget=null;clearTimeout(enterTimer);enterTimer=0;launchRequest++;pendingLaunch=null;clearLaunchNotice();if(!document.hidden&&mode==='home')renderHome(true);updateClock();}
+  function onForeground(){cancelNavigationFrame();pointerTarget=null;clearTimeout(enterTimer);enterTimer=0;launchRequest++;pendingLaunch=null;clearLaunchNotice();if(!document.hidden){if(mode==='home')renderHome(true);else if(mode==='settings'){buildSettings(true);renderSettings(true);}}updateClock();}
   document.addEventListener('visibilitychange',onForeground);document.addEventListener('webOSRelaunch',onForeground);
   buildDock();buildSources();if(!visible().length){zone='utilities';utility=1;}renderHome(true);updateClock();fit();$('bootStatus').hidden=true;
   return {

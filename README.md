@@ -4,7 +4,7 @@ A custom launcher for LG webOS TVs with a night-lake background, translucent gla
 
 The Night Dock design customization, implementation, optimization, and documentation were done by **GPT 6.1 Sol High**. The upstream launcher and third-party assets retain their original attribution.
 
-Version 1.1.3 was tested on an LG 55UT8050PSB running firmware 33.31.75 and webOS 10.3.2. The screenshots below are from the launcher running on the TV at 1920 × 1080.
+Version 1.1.4 was tested on an LG 55UT8050PSB running firmware 33.31.75 and webOS 10.3.2. The screenshots below are from the launcher running on the TV at 1920 × 1080.
 
 ## Home
 
@@ -65,7 +65,9 @@ Identify the codes from your remote rather than assuming they match. These mappi
 
 ### 6. Optional power-on and app-exit integration
 
-The tested setup also used a Homebrew startup watcher subscribed to the TV's power state. It launched Night Dock once at startup or wake with a 500 ms added delay. Quick Start+ was enabled and LG Home Auto Launch was disabled. This produced delayed autolaunch; the initial LG startup screen can still appear.
+For cold startup, a separate persistent ActivityManager activity launches Night Dock directly after `core-boot-done` and `firstAppLaunched`, while `boot-done` is still false and the TV is active. An unplug/power-on test confirmed automatic launch before the Homebrew watcher started. The initial input screen may still appear briefly; startup time varies.
+
+A Homebrew watcher handles sleep/wake and provides a startup fallback with a 500 ms added delay. It skips its initial launch when the earlier activity has already issued one, preventing a later takeover. Quick Start+ is enabled and LG Home Auto Launch is disabled in the tested setup.
 
 For direct return from YouTube, a writable system-profile override set:
 
@@ -87,7 +89,7 @@ npm run build
 npm run package
 ```
 
-The package is written to `build/works.partridge.webos-launcher_1.1.3_all.ipk`. The existing app ID is retained for compatibility with saved preferences and Home-button mappings.
+The package is written to `build/works.partridge.webos-launcher_1.1.4_all.ipk`. The existing app ID is retained for compatibility with saved preferences and Home-button mappings.
 
 For a rooted TV, copy `tv.env.example` to the ignored `tv.env`, set `TV_HOST` to your SSH alias or TV address, and run:
 
@@ -101,7 +103,7 @@ Run `npm run dev` for a browser preview with sample apps. Real launching and inp
 
 ## Performance
 
-The current build preserves the glass panels, artwork, and Home animations while reducing JavaScript/CSS size by 20% and median warm reload time by about 26% in the measured TV workload. See the [performance report](performance/REPORT.md) for measurements and limits.
+The glass panels, artwork, and Home animations are preserved. Earlier optimizations reduced JavaScript/CSS size by 20% and median warm reload time by about 26% in the measured TV workload. Version 1.1.4 also combines rapid navigation paints and skips row-edge rendering. See the [startup performance report](performance/REPORT.md) and [rapid navigation measurements](performance/RAPID-NAVIGATION.md) for results and limits.
 
 The launcher can still be reclaimed under heavy memory pressure and need a fresh launch. The tested launch-time memory exemption reduced one reclaim path; it did not guarantee residency during 4K playback.
 
