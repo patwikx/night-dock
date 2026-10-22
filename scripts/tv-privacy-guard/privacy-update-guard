@@ -1,0 +1,4 @@
+#!/bin/sh
+# Reapply writable settings and in-memory service registrations after boot.
+# Original firmware binaries and manifests are never edited.
+/usr/bin/node /var/lib/webosbrew/nightdock-privacy-guard/apply.cjs >> /tmp/privacy-update-guard.log 2>&1

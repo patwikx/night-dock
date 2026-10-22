@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('fs'),cp=require('child_process');
+const dir=__dirname;
+if(fs.existsSync(dir+'/before.json'))throw Error('Saved state already exists; refusing to replace it');
+const call=(uri,p)=>JSON.parse(cp.execFileSync('/usr/bin/luna-send',['-w','5000','-n','1',uri,JSON.stringify(p)],{encoding:'utf8',timeout:6500}));
+const support=call('luna://com.webos.settingsservice/getSystemSettings',{category:'support',keys:['automaticUpdate','softwareUpdateEnable']});
+const uploads=call('luna://com.webos.settingsservice/getSystemSettings',{category:'option',keys:['dbgLogUpload','faultLogUpload']});
+if(!support.returnValue||!uploads.returnValue)throw Error('Cannot snapshot settings');
+const manifests=['com.webos.service.admanager.manifest.json','com.webos.service.adoverlay.manifest.json','uploadd.manifest.json'].map(x=>'/usr/share/luna-service2/manifests.d/'+x);
+const binaries=['/usr/sbin/admanager','/usr/sbin/adoverlay-service','/usr/sbin/uploadd','/usr/sbin/update','/usr/sbin/ls-hubd'];
+const hook='/var/lib/webosbrew/init.d/privacy-update-guard';
+if(fs.existsSync(hook))throw Error('Existing guard hook must not be replaced');
+const procs=fs.readdirSync('/proc').filter(p=>/^\d+$/.test(p)).map(pid=>{try{return {pid,name:fs.readFileSync('/proc/'+pid+'/comm','utf8').trim()}}catch(_){return null}}).filter(Boolean);
+const state={time:new Date().toISOString(),support:support.settings,uploads:uploads.settings,updateBlockFlag:fs.existsSync('/var/luna/preferences/webosbrew_block_updates'),hosts:fs.readFileSync('/etc/hosts','utf8'),hostsMounts:fs.readFileSync('/proc/self/mountinfo','utf8').split('\n').filter(l=>l.split(' ')[4]==='/etc/hosts'),tmpHostsExisted:fs.existsSync('/tmp/hosts'),uploaddWasActive:cp.spawnSync('systemctl',['is-active','--quiet','uploadd.service']).status===0,uploaddRuntimeMask:fs.existsSync('/run/systemd/system/uploadd.service')?fs.readlinkSync('/run/systemd/system/uploadd.service'):null,running:procs.filter(p=>['admanager','adoverlay-servic','uploadd'].includes(p.name)),manifests,hashes:cp.execFileSync('sha256sum',[...manifests,...binaries],{encoding:'utf8'})};
+fs.mkdirSync(dir,{recursive:true,mode:0o700});fs.writeFileSync(dir+'/before.json',JSON.stringify(state,null,2),{mode:0o600});fs.writeFileSync(dir+'/hashes-before.txt',state.hashes,{mode:0o600});
+console.log(JSON.stringify({backup:dir,automaticUpdate:state.support.automaticUpdate,updateBlockFlag:state.updateBlockFlag,uploaddWasActive:state.uploaddWasActive,hostsMounts:state.hostsMounts.length}));

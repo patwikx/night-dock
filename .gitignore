@@ -28,3 +28,9 @@ performance/optimized/*
 !performance/optimized/browser-tests.json
 !performance/optimized/lifecycle.json
 performance/**/*-diff.png
+
+# Never publish device state captured by the optional TV guard
+scripts/tv-privacy-guard/before.json
+scripts/tv-privacy-guard/hashes-before.txt
+scripts/tv-privacy-guard/last-apply.json
+scripts/tv-privacy-guard/verification.json

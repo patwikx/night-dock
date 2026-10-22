@@ -79,6 +79,8 @@ The override was applied through the TV's existing system-profile rescan mechani
 
 These optional device integrations are separate from this repository. Deploying Night Dock installs the launcher app; it does not install a power watcher, map buttons, or write system profiles.
 
+An optional [ad/upload service and update guard](docs/TV-PRIVACY.md) includes reversible scripts for disabling selected services and automatic firmware/webOS updates. It is installed separately from Night Dock.
+
 ## Build and install Night Dock
 
 Use Node.js 22 or newer with npm:
