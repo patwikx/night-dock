@@ -1,0 +1,201 @@
+{
+  "device": {
+    "model": "LG 55UT8050PSB",
+    "firmware": "33.31.75",
+    "webOS": "10.3.2",
+    "cpuCores": 4,
+    "resolution": [
+      1920,
+      1080
+    ]
+  },
+  "physicalRemoteSession": {
+    "version": "1.1.4",
+    "sampleSeconds": 36.955,
+    "trustedArrowEvents": 90,
+    "cpuPercentOfOneCore": {
+      "renderer": 21.593830334190233,
+      "sharedWebEngine": 31.903666621566767,
+      "sharedCompositor": 7.279123258016506,
+      "startupWatcher": 0
+    },
+    "rendererMemoryKiB": {
+      "rss": 48440,
+      "pss": 43783,
+      "swapPss": 5592
+    },
+    "eventCreatedToCaptureMs": {
+      "median": 1.65,
+      "p95": 10.4,
+      "max": 26
+    },
+    "captureToNextRafMs": {
+      "median": 2.05,
+      "p95": 11.1,
+      "max": 38.1
+    }
+  },
+  "navigationCpuSlowdown": [
+    {
+      "cpuSlowdownRate": 1,
+      "homeEdge": {
+        "focusCalls": 0,
+        "mutations": 0
+      },
+      "homeBurst": {
+        "focusCalls": 1,
+        "correctSelection": true
+      },
+      "settingsEdge": {
+        "focusCalls": 0,
+        "mutations": 0
+      },
+      "settingsBurst": {
+        "index": "1",
+        "focusCalls": 1
+      },
+      "keyDispatchToRafMs": {
+        "median": 18.899999999906868,
+        "p95": 27.899999999906868,
+        "max": 113.39999999990687
+      },
+      "configUnchanged": true
+    },
+    {
+      "cpuSlowdownRate": 4,
+      "homeEdge": {
+        "focusCalls": 0,
+        "mutations": 0
+      },
+      "homeBurst": {
+        "focusCalls": 1,
+        "correctSelection": true
+      },
+      "settingsEdge": {
+        "focusCalls": 0,
+        "mutations": 0
+      },
+      "settingsBurst": {
+        "index": "1",
+        "focusCalls": 1
+      },
+      "keyDispatchToRafMs": {
+        "median": 40.39999999990687,
+        "p95": 50.800000000046566,
+        "max": 52.5
+      },
+      "configUnchanged": true
+    }
+  ],
+  "freshAppProcessBefore": [
+    {
+      "run": 0,
+      "launchToObservedReadyMs": 2201.5060559999997,
+      "documentReadyMs": 1772,
+      "paint": [
+        {
+          "name": "first-paint",
+          "startTime": 1268.3000000000466
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 1268.3000000000466
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "launchToObservedReadyMs": 1352.9776490000004,
+      "documentReadyMs": 1050.5,
+      "paint": [
+        {
+          "name": "first-paint",
+          "startTime": 630
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 630
+        }
+      ]
+    }
+  ],
+  "freshAppProcessAfter": [
+    {
+      "run": 0,
+      "launchToObservedReadyMs": 1755.9123220000001,
+      "documentReadyMs": 1391.0999999998603,
+      "paint": [
+        {
+          "name": "first-paint",
+          "startTime": 876.5
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 876.5
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "launchToObservedReadyMs": 1382.6333059999997,
+      "documentReadyMs": 1154.8000000000466,
+      "paint": [
+        {
+          "name": "first-paint",
+          "startTime": 812.1999999999534
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 812.1999999999534
+        }
+      ]
+    }
+  ],
+  "postUpdateForegroundBackgroundFirst": {
+    "foreground": {
+      "durationMs": 8011,
+      "rendererOneCorePercent": 10.735239046311323,
+      "memory": {
+        "RssKB": 71340,
+        "PssKB": 61259,
+        "SwapPssKB": 0
+      }
+    },
+    "background": {
+      "durationMs": 8011,
+      "rendererOneCorePercent": 0.3744850830108601,
+      "memory": {
+        "RssKB": 31092,
+        "PssKB": 25108,
+        "SwapPssKB": 0
+      }
+    },
+    "configUnchanged": true
+  },
+  "postUpdateForegroundBackgroundSettled": {
+    "foreground": {
+      "durationMs": 8011,
+      "rendererOneCorePercent": 0.24965672200724007,
+      "memory": {
+        "RssKB": 33568,
+        "PssKB": 27320,
+        "SwapPssKB": 5180
+      }
+    },
+    "background": {
+      "durationMs": 8011,
+      "rendererOneCorePercent": 0,
+      "memory": {
+        "RssKB": 33304,
+        "PssKB": 27046,
+        "SwapPssKB": 5180
+      }
+    },
+    "configUnchanged": true
+  },
+  "installedMetadata": {
+    "version": "1.1.5",
+    "spinnerOnLaunch": false,
+    "noSplashOnLaunch": true
+  }
+}
